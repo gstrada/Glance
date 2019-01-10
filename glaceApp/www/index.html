@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ES-es">
+    <head>
+		<script language="JavaScript">
+			history.pushState(null, null, location.href);
+			window.onpopstate = function () {
+				history.go(1);
+			};
+		</script>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+		<link rel="stylesheet" href="css/estilos.css"/>
+		<script type="text/javascript"  src="JQuery/jquery-1.1.3.min.js"></script>
+		<script type="text/javascript"  src="JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
+		<link rel="stylesheet" href="JQueryMobile/jquery.mobile-1.4.5.min.css" />
+		<script type="text/javascript"  src="js/scripts.js"></script>
+		<script type="text/javascript" src="cordova.js"></script>
+    </head>
+    <body onLoad="iniciar()" >
+        <div data-role="page" id="inicio" onload="iniciar()">
+			<div data-role="content"> 
+				<div id="div_logo" align="center" class="pant_inicio">
+					<img id="logo" alt="logo" src="images/LOGO1CO.png"/>
+					<div id="usr">	
+						<label>Soy...</label>
+					</div>
+					<br/>
+				</div>
+			</div>
+		</div>
+		<div data-role="page" id="page1">
+			<div data-role="content"> 
+				<div id="tipoUsr" align="center">
+					<br/>
+					<label>Soy...</label>
+					<div id="btnsUsr">
+						<a id="usuario" class="ui-btn ui-btn-b btnUsrEsp" href="#loginUsr" style="border-radius: 10px; width: 70%;">USUARIO</a>
+						<br/>
+						<br/>
+						<button id="espectador" class="ui-btn ui-btn-b btnUsrEsp" style="border-radius: 10px; width: 70%;">ESPECTADOR</button>
+					</div>
+				</div>
+				<br/>
+			</div>
+			<div data-role="footer" id="ftrUsr">
+				<div align="center">
+					<img class="imagenFooter" id="logoFtr1" alt="logo" src="images/ojo_glance_bco.png"/>
+					<br/>
+					<br/>
+				</div>
+			</div>
+		</div>
+		<div data-role="page" data-theme="b" id="loginUsr">
+			<div data-role="content">
+				<div data-role="content" id="datosAcceso" align="center">
+					<div id="inputUser" align="center">
+						<div id="divImgUsr" class="imgLogin">
+							<img id="imgUsr" src="JQueryMobile/images/icons-png/user-white.png" />
+						</div>
+						<div id="inputUsr" class="inputLogin" >
+							<input id="nombreUsr" type="text" placeholder="Usuario"/>
+						</div>
+					</div>
+					<div id="inputPass">
+						<div id="divImgPass" class="imgLogin" align="center">
+							<img id="imgPass" src="JQueryMobile/images/icons-png/lock-white.png" />
+						</div>
+						<div id="inputTextPass" class="inputLogin" >
+							<input id="passwordUsr" type="password" placeholder="Contraseña"/>
+						</div>
+					</div>
+					<div id="olvidoPass" align="center">
+						<br/>
+						<span>Usuario/contraseña olvidados?</span>
+						<br/>
+						<a>Toque aquí...</a>
+					</div>
+					<br/>
+					<a class="ui-btn ui-btn-b" value="ENTRAR" href="#usrExistente" style="border-radius: 10px; width: 70%;">ENTRAR</a>
+					<span>o...</span>
+					<br/>
+					<a class="ui-btn ui-btn-b" value="Crear Usuario" style="border-radius: 10px; width: 70%;">Crear Usuario</a>
+				</div>
+			</div>
+			<div data-role="footer" id="ftrUsr2">
+				<div align="center">
+					<img class="imagenFooter" id="logoFtr2" alt="logo" src="images/ojo_glance_bco.png"/>
+					<br/>
+					<br/>
+				</div>
+			</div>
+		</div>
+		<div data-role="page" data-theme="b" id="usrExistente">
+			<div data-role="content" class="backColor" style="min-height: 90%;">
+				<div align="center" id="usrData">
+					<div id="usrFoto" style="width: 100%; margin-top: 15%;">
+						<img src="images/profile.png" style="width: 100px; height: 100px"/>
+						<div><br/></div>
+						<label>Usuario</label>
+					</div>
+					<div><br/></div>
+					<div><br/></div>
+					<div id="optionBtns">
+						<a class="ui-btn ui-btn-b" value="ENTRAR" href="#perfilPublico" style="border-radius: 10px; width: 70%;">Mi perfil público</a>
+						<a class="ui-btn ui-btn-b" value="ENTRAR" href="#fotosPerfil" style="border-radius: 10px; width: 70%;">Fotos y videos</a>
+						<a class="ui-btn ui-btn-b" value="ENTRAR" href="#usrExistente" style="border-radius: 10px; width: 70%;">Mis datos</a>
+					</div>
+				</div>
+			</div>
+			<div data-role="footer" id="ftrUsr3">
+				<div align="center">
+					<img class="imagenFooter" id="logoFtr3" alt="logo" src="images/ojo_glance_bco.png"/>
+					<br/>
+					<br/>
+				</div>
+			</div>
+		</div>
+		<div data-role="page" data-theme="b" id="perfilPublico" style="width: 100%" align="center">
+			<div data-role="content" id="datosPerfilPublico">
+				<label>Usuario</label><br/>
+				<div data-role="content" id="lbledad" class="lblPerfilPub">
+					<label id="edad">Edad:</label>
+				</div>
+				<div data-role="content" id="inpEdad" class="inputPerfilPublico">
+					<input type="text" id="inputEdad">
+				</div>
+				<div data-role="content" id="lblestat" class="lblPerfilPub">
+					<label id="estatura">Estatura:</label>
+				</div>
+				<div data-role="content" id="inpEstat" class="inputPerfilPublico">
+					<input type="text" id="inputEstat">
+				</div>
+				<div data-role="content" id="lblMed" class="lblPerfilPub">
+					<label id="medidas">Medidas:</label>
+				</div>
+				<div data-role="content" id="inpMed" class="inputPerfilPublico">
+					<input type="text" id="inputMed">
+				</div>
+				<div data-role="content" id="lblPelo" class="lblPerfilPub">
+					<label id="pelo">Cabello:</label>
+				</div>
+				<div data-role="content" id="inpPelo" class="inputPerfilPublico">
+					<input type="text" id="inputPelo">
+				</div>
+				<div data-role="content" id="lblOjos" class="lblPerfilPub">
+					<label id="ojos">Ojos:</label>
+				</div>
+				<div data-role="content" id="inpOjos" class="inputPerfilPublico">
+					<input type="text" id="inputOjos">
+				</div>
+				<div data-role="content" id="lblPiel" class="lblPerfilPub">
+					<label id="piel">Piel:</label>
+				</div>
+				<div data-role="content" id="inpPiel" class="inputPerfilPublico">
+					<input type="text" id="inputPiel">
+				</div>
+				<div data-role="content" style="width: 100%; padding-top: 0; padding-bottom: 0">
+					<div data-role="content" style="width: 40%; float: left; padding-left: 0; padding-bottom: 0">
+						<div data-role="content" id="lblTatoo" style="float: left !important; padding-top: 0; padding-left: 0; padding-bottom: 0">
+							<label id="tatoos">Tatoos:</label>
+						</div>
+						<div data-role="content" id="inpTatoo" style="padding-top: 0; padding-left: 0">
+							<input type="checkbox" id="inputTatoo">
+						</div>
+					</div>
+					<div data-role="content" style="width: 45%; float: right; padding-right: 0; padding-bottom: 0">
+						<div data-role="content" id="lblPier" style="float: left !important; padding-top: 0; padding-left: 0; padding-bottom: 0">
+							<label id="piercings">Piercings:</label>
+						</div>
+						<div data-role="content" id="inpPier" style="padding-top: 0; padding-left: 0">
+							<input type="checkbox" id="inputPier">
+						</div>
+					</div>
+				</div>
+				<div data-role="content" id="lblCiudad" class="lblPerfilPub">
+					<label id="ciudad">Ciudad:</label>
+				</div>
+				<div data-role="content" id="inpCiudad" class="inputPerfilPublico">
+					<input type="text" id="inputCiudad">
+				</div>
+				<div data-role="content" id="lblAcerca" class="lblPerfilPub">
+					<label id="acerca">Sobre mí:</label>
+				</div>
+				<div data-role="content" id="inpAcerca" class="inputPerfilPublico">
+					<textarea type="text" id="inputAcerca"></textarea>
+				</div>
+				<div data-role="content" id="ftrUsr4" style="width: 100%;padding-left: 0">
+				<div align="center">
+					<img class="imagenFooter" id="logoFtr4" alt="logo" src="images/ojo_glance_bco.png"/>
+				</div>
+			</div>
+			</div>			
+		</div>
+		<div data-role="page" data-theme="b" id="fotosPerfil" style="width: 100%; font-family:'Tw Cen MT'" align="center">
+			<div data-role="content" id="lblFotos">
+				<label>Usuario</label>
+				<span>Galería de fotos y videos</span>
+				<div data-role="content" id="contFotos">
+					<img id="foto1" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto1">
+					<img id="foto2" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto2">
+					<img id="foto3" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto3">
+					<img id="foto4" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto4">
+					<img id="foto5" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto5">
+					<img id="foto6" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto6">
+				</div>
+			</div>
+		</div>
+    </body>
+</html>

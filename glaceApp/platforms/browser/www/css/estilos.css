@@ -1,0 +1,128 @@
+@charset "utf-8";
+/* CSS Document */
+body{
+	width: 100%;
+	height: 100%;
+	font-family: "Tw Cen MT";
+	background-color: black;
+}
+.lblPerfilPub{
+	float: left;
+	width: 20%;
+	clear: both;
+	text-align: left;
+}
+.inputPerfilPublico{
+	float: right;
+	width: 65% !important;
+	padding: 0 0 0 0 !important;
+	
+}
+.pant_inicio {
+	width: 100%;
+	min-height: 100% !important;
+	height: auto !important;
+	position: fixed;
+	top:0; 
+	left:0;
+	background-color: black;
+	background-image: url(../images/SPLASHchico.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	clear: both;
+}
+
+
+[data-role=page]{
+	height: 100% !important; 
+	background-color: black !important;
+	width:100% !important;
+	position:relative!important;
+}
+[data-role=footer]{
+	bottom:0; 
+	position:absolute !important; 
+	top: auto;
+	width:100%;
+	background-color: black !important;
+	border: none !important;
+}  
+
+#usr{
+	color: white;
+	display: none;
+}
+#logo{
+	margin: 40% 0 0 0; 
+	width: 50%; 
+	height: auto;
+}
+
+#tipoUsr{
+	color: white;
+	
+}
+.backColor{
+	background-color: black;
+}
+
+#page1{
+	background-color: black;
+}
+#loginUsr{
+	background-color: black;
+}
+
+#btnsUsr{
+	margin-top: 20%;
+}
+.imagenFooter{
+	width: 20%;
+	height: 20%;
+}
+.btnUsrEsp{
+	border: none !important;
+	background-color: black !important;
+	font-family: "Tw Cen MT" !important;
+}
+
+.inputLogin{
+	border-top: 0px !important;
+	border-right: 0px !important;
+	width:80% !important;
+	float: right;
+}
+#nombreUsr{
+	border-top: 0px !important;
+	border-right: 0px !important;
+}
+
+.imgLogin{
+	float: left !important;
+	height: auto !important;
+	width: 18% !important;
+}
+#imgUsr{
+	height: 30px !important;
+	width: 30px !important;
+	margin: 5px 0 0 5px !important;
+}
+#imgPass{
+	height: 30px !important;
+	width: 30px !important;
+	margin: 10px 0 0 0 !important;
+}
+#divImgPass{
+	margin: 15px 0 0 0;
+}
+#inputUser{
+	margin-top: 10%;
+	font-family: "Tw Cen MT" !important;
+}
+#olvidoPass{
+	margin-top:10% !important;
+}
+
+
+
+
