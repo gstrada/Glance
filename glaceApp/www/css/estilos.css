@@ -3,8 +3,8 @@
 body{
 	width: 100%;
 	height: 100%;
-	font-family: "Tw Cen MT";
-	background-color: black;
+	font-family: "Tw Cen MT" !important;
+	background-color: black !important;
 }
 .lblPerfilPub{
 	float: left;
@@ -63,7 +63,7 @@ body{
 	
 }
 .backColor{
-	background-color: black;
+	background-color: black !important;
 }
 
 #page1{
@@ -121,6 +121,10 @@ body{
 }
 #olvidoPass{
 	margin-top:10% !important;
+}
+.btnGaleria{
+	border-radius: 10px;
+	font-family: 'Tw Cen MT' !important;
 }
 
 

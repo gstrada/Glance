@@ -34,10 +34,10 @@
 					<br/>
 					<label>Soy...</label>
 					<div id="btnsUsr">
-						<a id="usuario" class="ui-btn ui-btn-b btnUsrEsp" href="#loginUsr">USUARIO</a>
+						<a id="usuario" class="ui-btn ui-btn-b btnUsrEsp" href="#loginUsr" style="border-radius: 10px; width: 70%;">USUARIO</a>
 						<br/>
 						<br/>
-						<button id="espectador" class="ui-btn ui-btn-b btnUsrEsp">ESPECTADOR</button>
+						<button id="espectador" class="ui-btn ui-btn-b btnUsrEsp" style="border-radius: 10px; width: 70%;">ESPECTADOR</button>
 					</div>
 				</div>
 				<br/>
@@ -76,10 +76,10 @@
 						<a>Toque aquí...</a>
 					</div>
 					<br/>
-					<a class="ui-btn ui-btn-b" value="ENTRAR" href="#usrExistente">ENTRAR</a>
+					<a class="ui-btn ui-btn-b" value="ENTRAR" href="#usrExistente" style="border-radius: 10px; width: 70%;">ENTRAR</a>
 					<span>o...</span>
 					<br/>
-					<a class="ui-btn ui-btn-b" value="Crear Usuario">Crear Usuario</a>
+					<a class="ui-btn ui-btn-b" value="Crear Usuario" style="border-radius: 10px; width: 70%;">Crear Usuario</a>
 				</div>
 			</div>
 			<div data-role="footer" id="ftrUsr2">
@@ -90,8 +90,8 @@
 				</div>
 			</div>
 		</div>
-		<div data-role="page" data-theme="b" id="usrExistente">
-			<div data-role="content" class="backColor" style="min-height: 90%;">
+		<div data-role="page" data-theme="b" id="usrExistente" style="height: 100% !important; background-color: black !important;">
+			<div data-role="content" style="height: 100% !important; background-color: black;">
 				<div align="center" id="usrData">
 					<div id="usrFoto" style="width: 100%; margin-top: 15%;">
 						<img src="images/profile.png" style="width: 100px; height: 100px"/>
@@ -102,14 +102,17 @@
 					<div><br/></div>
 					<div id="optionBtns">
 						<a class="ui-btn ui-btn-b" value="ENTRAR" href="#perfilPublico" style="border-radius: 10px; width: 70%;">Mi perfil público</a>
-						<a class="ui-btn ui-btn-b" value="ENTRAR" href="#usrExistente" style="border-radius: 10px; width: 70%;">Fotos y videos</a>
+						<a class="ui-btn ui-btn-b" value="ENTRAR" href="#fotosPerfil" style="border-radius: 10px; width: 70%;">Fotos y videos</a>
 						<a class="ui-btn ui-btn-b" value="ENTRAR" href="#usrExistente" style="border-radius: 10px; width: 70%;">Mis datos</a>
 					</div>
 				</div>
 			</div>
+			<div data-role="panel" id="leftPanel3" data-theme="b">
+				<a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a>
+			</div>
 			<div data-role="footer" id="ftrUsr3">
 				<div align="center">
-					<img class="imagenFooter" id="logoFtr3" alt="logo" src="images/ojo_glance_bco.png"/>
+					<a href="#leftPanel3" data-theme="d"><img class="imagenFooter" id="logoFtr3" alt="logo" src="images/ojo_glance_bco.png"/></a>
 					<br/>
 					<br/>
 				</div>
@@ -185,12 +188,68 @@
 					<textarea type="text" id="inputAcerca"></textarea>
 				</div>
 				<div data-role="content" id="ftrUsr4" style="width: 100%;padding-left: 0">
-				<div align="center">
-					<img class="imagenFooter" id="logoFtr4" alt="logo" src="images/ojo_glance_bco.png"/>
+					<div align="center">
+						<a href="#" data-theme="d"><img class="imagenFooter" id="logoFtr4" alt="logo" src="images/ojo_glance_bco.png"/></a>
+					</div>
 				</div>
 			</div>
+			<div data-role="panel" id="leftPanel4" data-theme="b">
+					<a href="#usrExistente" data-role="button" data-mini="true" data-inline="true" data-icon="home" data-iconpos="right">Home</a>
+				</div>		
+				
+		</div>
+		<div data-role="page" data-theme="b" id="fotosPerfil" style="width: 100%; font-family:'Tw Cen MT'" align="center">
+			<div data-role="content" id="lblFotos" class="backColor">
+				<label>Usuario</label>
+				<span>Galería de fotos y videos</span>
+				<div>
+					<br/>
+				</div>
+				<div data-role="content" id="contFotos" style="margin: 0 0 0 0; padding: 0 0 0 0; min-width: 100%">
+					<div data-role="content" id="fotoUno" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
+						<img id="foto1" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto1">
+						<a class="ui-btn ui-btn-b btnGaleria">Subir</a>
+					</div>
+					<div data-role="content" id="fotoDos" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
+						<img id="foto2" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto2">
+						<a class="ui-btn ui-btn-b btnGaleria">Subir</a>
+					</div>
+					<div data-role="content" id="fotoTres" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
+						<img id="foto3" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto3">
+						<a class="ui-btn ui-btn-b btnGaleria">Subir</a>
+					</div>
+					<div data-role="content" id="fotoCuatro" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
+						<img id="foto4" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto4">
+						<a class="ui-btn ui-btn-b btnGaleria">Subir</a>
+					</div>
+					<div data-role="content" id="fotoCinco" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
+						<img id="foto5" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto5">
+						<a class="ui-btn ui-btn-b btnGaleria">Subir</a>
+					</div>
+					<div data-role="content" id="fotoSeis" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
+						<img id="foto6" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto6">
+						<a class="ui-btn ui-btn-b btnGaleria">Subir</a>
+					</div>
+					<div data-role="content" id="videoUno" style="float: left; width: 48%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
+						<img id="video1" src="images/video.png" style="width: 70px; height: 70px;" alt="Video1">
+						<a class="ui-btn ui-btn-b btnGaleria">Subir</a>
+					</div>
+					<div data-role="content" id="videoDos" style="float: right; width: 48%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
+						<img id="video2" src="images/video.png" style="width: 70px; height: 70px;" alt="Video2">
+						<a class="ui-btn ui-btn-b btnGaleria">Subir</a>
+					</div>
+				</div>
 			</div>
-			
+			<div data-role="panel" id="leftPanel5" data-theme="b">
+				<a href="#usrExistente" data-role="button" data-mini="true" data-inline="true" data-icon="home" data-iconpos="right">Home</a>
+			</div>
+			<div data-role="footer" id="ftrUsr5">
+				<div align="center">
+					<a href="#leftPanel5" data-theme="d"><img class="imagenFooter" id="logoFtr5" alt="logo" src="images/ojo_glance_bco.png"/></a>
+					<br/>
+					<br/>
+				</div>
+			</div>
 		</div>
     </body>
 </html>
