@@ -12,11 +12,25 @@ body{
 	clear: both;
 	text-align: left;
 }
+.lblDatosUser{
+	float: left;
+	width: 20% !important;
+	clear: both;
+	text-align: left;
+	padding-bottom: 0px !important;
+	padding-top: 0px !important;
+}
 .inputPerfilPublico{
 	float: right;
 	width: 65% !important;
 	padding: 0 0 0 0 !important;
 	
+}
+.inputDatosUser{
+	float: right;
+	width: 65% !important;
+	padding: 0 0 0 0 !important;
+	margin-top: 0px !important;
 }
 .pant_inicio {
 	width: 100%;
@@ -26,7 +40,7 @@ body{
 	top:0; 
 	left:0;
 	background-color: black;
-	background-image: url(../images/SPLASHchico.png);
+	background-image: url(../images/ondacolor4.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	clear: both;
@@ -44,9 +58,15 @@ body{
 	position:absolute !important; 
 	top: auto;
 	width:100%;
-	background-color: black !important;
+ 	background-color: rgba(255, 0, 0, 0) !important;
 	border: none !important;
-}  
+}
+[data-role=header]{
+	width:100%;
+	position: absolute;
+	background-color: rgba(255, 0, 0, 0) !important;
+	border: none !important;
+} 
 
 #usr{
 	color: white;
@@ -67,12 +87,58 @@ body{
 }
 
 #page1{
-	background-color: black;
+	
+	background-image: url(../images/ondacolor1.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#usrExistente{	
+	background-image: url(../images/ondacolor1.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 #loginUsr{
 	background-color: black;
+	
 }
-
+#btnFiltro{
+	float: right !important;
+	width: 60%;
+	font-size: 1em;
+	background-color: rgba(255, 0, 0, 0) !important;
+	border: none;
+}
+#logoHeader{
+	width: 40%;
+	float: left;
+	padding-left: 5%;
+}
+.fotoPerfilNav{
+	width: 100% !important;
+	height: 100% !important;
+}
+.divPerfil{
+	padding: 0 0 0 0 !important;
+	width: 100% !important;
+	min-height: 18% !important;
+	border: 1px solid white !important;
+	border-radius: 10px;
+}
+.divFotoPerfil{
+	width: 30% !important;
+	float: left;
+}
+.divTextoPerfil{
+	float: right;
+	width: 65%;
+}
+#contPerfiles{
+	min-height: 80% !important;
+}
+#btnHeader{
+	width: 48%;
+	float: right;
+}
 #btnsUsr{
 	margin-top: 20%;
 }
@@ -80,9 +146,19 @@ body{
 	width: 20%;
 	height: 20%;
 }
+#logoHdr1{
+	height: 50px;
+	width: auto;
+}
+.imagenHdr{
+	margin: 5% 0 0 0 !important;
+	float: left;	
+}
 .btnUsrEsp{
 	border: none !important;
-	background-color: black !important;
+	border-radius: 10px; 
+	width: 70%; 
+	background-color: rgba(255, 0, 0, 0) !important;
 	font-family: "Tw Cen MT" !important;
 }
 
@@ -107,6 +183,11 @@ body{
 	width: 30px !important;
 	margin: 5px 0 0 5px !important;
 }
+.imgLogueo{
+	height: 30px !important;
+	width: 30px !important;
+	margin: 10px 0 0 5px !important;
+}
 #imgPass{
 	height: 30px !important;
 	width: 30px !important;
@@ -125,6 +206,22 @@ body{
 .btnGaleria{
 	border-radius: 10px;
 	font-family: 'Tw Cen MT' !important;
+}
+.btnGenerico{
+	border-radius: 10px; 
+	width: 70%;
+	font-family: "Tw Cen MT" !important;
+}
+.stylePages{
+	width: 100%;
+	font-family: 'Tw Cen MT' !important;
+	background-color: black !important;
+	overflow: auto;
+}
+.bienvenida{
+	font-weight: bold !important;
+	text-align: center !important;
+	word-wrap: break-word;
 }
 
 
