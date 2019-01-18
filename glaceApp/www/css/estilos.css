@@ -1,5 +1,9 @@
 @charset "utf-8";
 /* CSS Document */
+@font-face{
+	font-family: "Tw Cen MT";
+	src: url("../fonts/Tw Cen MT.ttf");
+}
 body{
 	width: 100%;
 	height: 100%;
@@ -12,6 +16,7 @@ body{
 	clear: both;
 	text-align: left;
 }
+
 .lblDatosUser{
 	float: left;
 	width: 20% !important;
@@ -25,6 +30,11 @@ body{
 	width: 65% !important;
 	padding: 0 0 0 0 !important;
 	
+}
+.inputCorto{
+	float: right;
+	width: 15% !important;
+	padding: 0 0 0 0 !important;
 }
 .inputDatosUser{
 	float: right;
@@ -40,13 +50,11 @@ body{
 	top:0; 
 	left:0;
 	background-color: black;
-	background-image: url(../images/ondacolor4.jpg);
+	background-image: url(../images/glance1.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	clear: both;
 }
-
-
 [data-role=page]{
 	height: 100% !important; 
 	background-color: black !important;
@@ -55,7 +63,7 @@ body{
 }
 [data-role=footer]{
 	bottom:0; 
-	position:absolute !important; 
+	position:fixed!important; 
 	top: auto;
 	width:100%;
  	background-color: rgba(255, 0, 0, 0) !important;
@@ -66,8 +74,7 @@ body{
 	position: absolute;
 	background-color: rgba(255, 0, 0, 0) !important;
 	border: none !important;
-} 
-
+}
 #usr{
 	color: white;
 	display: none;
@@ -77,29 +84,25 @@ body{
 	width: 50%; 
 	height: auto;
 }
-
 #tipoUsr{
-	color: white;
-	
+	color: white;	
 }
 .backColor{
 	background-color: black !important;
 }
+#usrExistente{
+	background-image: url(../images/ondacolor2.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+#page1{	
+	background-image: url(../images/ondacolor1.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
 
-#page1{
-	
-	background-image: url(../images/ondacolor1.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-#usrExistente{	
-	background-image: url(../images/ondacolor1.jpg);
-	background-repeat: no-repeat;
-	background-size: cover;
-}
-#loginUsr{
-	background-color: black;
-	
+.loginUsr{
+	background-color: black !important;	
 }
 #btnFiltro{
 	float: right !important;
@@ -161,7 +164,6 @@ body{
 	background-color: rgba(255, 0, 0, 0) !important;
 	font-family: "Tw Cen MT" !important;
 }
-
 .inputLogin{
 	border-top: 0px !important;
 	border-right: 0px !important;
@@ -172,12 +174,10 @@ body{
 	border-top: 0px !important;
 	border-right: 0px !important;
 }
-
 .imgLogin{
 	float: left !important;
 	height: auto !important;
-	width: 18% !important;
-}
+	width: 18% !important;}
 #imgUsr{
 	height: 30px !important;
 	width: 30px !important;
@@ -223,6 +223,17 @@ body{
 	text-align: center !important;
 	word-wrap: break-word;
 }
+.swiper-container {
+      width: 100%;
+      height: 50%;
+    }
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      
+      align-items: center;
+    }
 
 
 
