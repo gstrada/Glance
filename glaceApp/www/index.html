@@ -13,8 +13,11 @@
 		<script type="text/javascript"  src="JQuery/jquery-1.1.3.min.js"></script>
 		<script type="text/javascript"  src="JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
 		<link rel="stylesheet" href="JQueryMobile/jquery.mobile-1.4.5.min.css" />
+		<link rel="stylesheet" href="dist/css/swiper.min.css">
 		<script type="text/javascript"  src="js/scripts.js"></script>
 		<script type="text/javascript" src="cordova.js"></script>
+		<script src="dist/js/swiper.min.js"></script>
+		
     </head>
     <body onLoad="iniciar()" >
         <div data-role="page" id="inicio" onload="iniciar()">
@@ -22,7 +25,7 @@
 				<div id="div_logo" align="center" class="pant_inicio">
 					<img id="logo" alt="logo" src="images/LOGO1CO.png"/>
 					<div id="usr">	
-						<label>Soy...</label>
+						<label></label>
 					</div>
 					<br/>
 				</div>
@@ -32,7 +35,7 @@
 			<div data-role="content"> 
 				<div id="tipoUsr" align="center">
 					<br/>
-					<label>Soy...</label>
+					<label></label>
 					<div id="btnsUsr">
 						<a id="usuario" class="ui-btn ui-btn-b btnUsrEsp" href="#loginUsr">USUARIO</a>
 						<br/>
@@ -50,7 +53,7 @@
 				</div>
 			</div>
 		</div>
-		<div data-role="page" data-theme="b" id="loginUsr">
+		<div data-role="page" data-theme="b" id="loginUsr" class="loginUsr">
 			<div data-role="content">
 				<div data-role="content" id="datosAcceso" align="center">
 					<div id="inputUser" align="center">
@@ -91,115 +94,96 @@
 			</div>
 		</div>
 		<div data-role="page" data-theme="b" id="usrExistente">
-			<div data-role="content">
+			<div data-role="content" >
 				<div align="center" id="usrData">
-					<div id="usrFoto" style="width: 100%; margin-top: 15%;">
-						<img src="images/woman1.jpg" style="width: 100px; height: 100px"/>
+					<div id="usrFoto" style="width: 100%; margin-top: 15%; ">
+						<img src="images/woman1.jpg" style="width: 100px; height: 100px; border-radius: 50px"/>
 						<div><br/></div>
-						<label>Pirula Pirulez</label>
+						<label>Juana de Arco</label>
 					</div>
 					<div><br/></div>
 					<div><br/></div>
 					<div id="optionBtns">
-						<a class="ui-btn ui-btn-b" value="ENTRAR" href="#perfilPublico" style="border-radius: 10px; width: 70%;">Mi perfil público</a>
-						<a class="ui-btn ui-btn-b" value="ENTRAR" href="#fotosPerfil" style="border-radius: 10px; width: 70%;">Fotos y videos</a>
-						<a class="ui-btn ui-btn-b" value="ENTRAR" href="#datosUsuario" style="border-radius: 10px; width: 70%;">Mis datos</a>
+						<a class="ui-btn ui-btn-b btnUsrEsp" value="ENTRAR" href="#perfilPublico" data-transition="pop">Mi perfil público</a>
+						<a class="ui-btn ui-btn-b btnUsrEsp" value="ENTRAR" href="#fotosPerfil" data-transition="pop">Fotos y videos</a>
+						<a class="ui-btn ui-btn-b btnUsrEsp" value="ENTRAR" href="#datosUsuario" data-transition="pop">Mis datos</a>
 					</div>
 				</div>
-			</div>
-			<div data-role="panel" id="leftPanel3" data-theme="b">
-				<a href="#" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Close</a>
 			</div>
 			<div data-role="footer" id="ftrUsr3">
 				<div align="center">
-					<a href="#leftPanel3" data-theme="d"><img class="imagenFooter" id="logoFtr3" alt="logo" src="images/ojo_glance_bco.png"/></a>
+					<a href="#overlayPanel" data-theme="d"><img class="imagenFooter" id="logoFtr3" alt="logo" src="images/ojo_glance_bco.png"/></a>
 					<br/>
 					<br/>
 				</div>
 			</div>
+			<div data-role="panel" id="overlayPanel"  data-display="overlay" class="overlayPanel" style=" background: rgba(3,3,3,0.95);" >
+				<a href="#usrExistente" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Home</a>
+			</div>
+			
 		</div>
 		<div data-role="page" data-theme="b" id="perfilPublico" style="width: 100%; overflow: auto" align="center">
 			<div data-role="content" id="datosPerfilPublico">
-				<label>Usuario</label>
-				<div data-role="content" id="lbledad" class="lblPerfilPub">
-					<label id="edad">Edad:</label>
-				</div>
-				<div data-role="content" id="inpEdad" class="inputPerfilPublico">
-					<input type="text" id="inputEdad">
-				</div>
-				<div data-role="content" id="lblestat" class="lblPerfilPub">
-					<label id="estatura">Estatura:</label>
-				</div>
-				<div data-role="content" id="inpEstat" class="inputPerfilPublico">
-					<input type="text" id="inputEstat">
-				</div>
-				<div data-role="content" id="lblMed" class="lblPerfilPub">
-					<label id="medidas">Medidas:</label>
-				</div>
-				<div data-role="content" id="inpMed" class="inputPerfilPublico">
-					<input type="text" id="inputMed">
-				</div>
-				<div data-role="content" id="lblPelo" class="lblPerfilPub">
-					<label id="pelo">Cabello:</label>
-				</div>
-				<div data-role="content" id="inpPelo" class="inputPerfilPublico">
-					<input type="text" id="inputPelo">
-				</div>
-				<div data-role="content" id="lblOjos" class="lblPerfilPub">
-					<label id="ojos">Ojos:</label>
-				</div>
-				<div data-role="content" id="inpOjos" class="inputPerfilPublico">
-					<input type="text" id="inputOjos">
-				</div>
-				<div data-role="content" id="lblPiel" class="lblPerfilPub">
-					<label id="piel">Piel:</label>
-				</div>
-				<div data-role="content" id="inpPiel" class="inputPerfilPublico">
-					<input type="text" id="inputPiel">
-				</div>
-				<div data-role="content" style="width: 100%; padding-top: 0; padding-bottom: 0">
-					<div data-role="content" style="width: 40%; float: left; padding-left: 0; padding-bottom: 0">
-						<div data-role="content" id="lblTatoo" style="float: left !important; padding-top: 0; padding-left: 0; padding-bottom: 0">
-							<label id="tatoos">Tatoos:</label>
+				<div style="min-height: 100% !important">
+					<label>Usuario</label>
+					<div id="lbledad" align="center">
+						<label id="edad" style="width: 45%; float: left">Edad:<input type="text" id="inputEdad"></label>
+						<label id="estatura" style="width: 45%;float: right">Estatura:<input type="text" id="inputEstat"></label>						
+					</div>
+					<div id="lblmedidas" align="center">
+						<label id="medidas" style="width: 45%; float: left">Medidas:<input type="text" id="inputMed"></label>
+						<label id="pelo" style="width: 45%;float: right">Cabello:<input type="text" id="inputPelo"></label>						
+					</div>
+					<div id="ojos" align="center">
+						<label id="ojos" style="width: 45%; float: left">Ojos:<input type="text" id="inputOjos"></label>
+						<label id="piel" style="width: 45%;float: right">Piel:<input type="text" id="inputPiel"></label>						
+					</div>
+					<div data-role="content" style="width: 100%; padding-top: 0; padding-bottom: 0">
+						<div data-role="content" style="width: 40%; float: left; padding-left: 0; padding-bottom: 0; padding-top: 0">
+							<div data-role="content" id="lblTatoo" style="float: left !important; padding-top: 0; padding-left: 0; padding-bottom: 0">
+								<label id="tatoos">Tatoos:</label>
+							</div>
+							<div data-role="content" id="inpTatoo" style="padding-top: 0; padding-left: 0">
+								<input type="checkbox" id="inputTatoo">
+							</div>
 						</div>
-						<div data-role="content" id="inpTatoo" style="padding-top: 0; padding-left: 0">
-							<input type="checkbox" id="inputTatoo">
+						<div data-role="content" style="width: 45%; float: right; padding-right: 0; padding-bottom: 0; padding-top: 0">
+							<div data-role="content" id="lblPier" style="float: left !important; padding-top: 0; padding-left: 0; padding-bottom: 0">
+								<label id="piercings">Piercings:</label>
+							</div>
+							<div data-role="content" id="inpPier" style="padding-top: 0; padding-left: 0">
+								<input type="checkbox" id="inputPier">
+							</div>
 						</div>
 					</div>
-					<div data-role="content" style="width: 45%; float: right; padding-right: 0; padding-bottom: 0">
-						<div data-role="content" id="lblPier" style="float: left !important; padding-top: 0; padding-left: 0; padding-bottom: 0">
-							<label id="piercings">Piercings:</label>
-						</div>
-						<div data-role="content" id="inpPier" style="padding-top: 0; padding-left: 0">
-							<input type="checkbox" id="inputPier">
-						</div>
+					<div data-role="content" id="lblCiudad" class="lblPerfilPub">
+						<label id="ciudad">Ciudad:</label>
+					</div>
+					<div data-role="content" id="inpCiudad" class="inputPerfilPublico">
+						<input type="text" id="inputCiudad">
+					</div>
+					<div id="lblSobre" align="center">
+						<label id="sobreMi" style="width: 100%; float: left">Sobre mí:<textarea type="text" id="inputSobre" style="min-height: 30% !important"></textarea></label>					
 					</div>
 				</div>
-				<div data-role="content" id="lblCiudad" class="lblPerfilPub">
-					<label id="ciudad">Ciudad:</label>
-				</div>
-				<div data-role="content" id="inpCiudad" class="inputPerfilPublico">
-					<input type="text" id="inputCiudad">
-				</div>
-				<div data-role="content" id="lblAcerca" class="lblPerfilPub">
-					<label id="acerca">Sobre mí:</label>
-				</div>
-				<div data-role="content" id="inpAcerca" class="inputPerfilPublico">
-					<textarea type="text" id="inputAcerca"></textarea>
-				</div>
+				<br />
+				<br />
 			</div>
-			<div data-role="panel" id="leftPanel4" data-theme="b">
-					<a href="#usrExistente" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Home</a>
-				</div>
+			<div data-role="panel" id="leftPanel4" data-display="overlay" class="overlayPanel" style=" background: rgba(3,3,3,0.9);"  align="left">
+				<a href="#usrExistente" data-transition="pop" data-role="button" data-inline="true" data-icon="home" data-iconpos="left" style="background-color: transparent; border: none">Home</a><br />
+				<a href="#perfilPublico" data-transition="pop" data-role="button" data-inline="true" data-icon="user" data-iconpos="left" style="background-color: transparent; border: none">Mi perfil</a>
+				<a href="#page1" data-transition="pop" data-role="button" data-inline="true" data-icon="delete" data-iconpos="left" style="background-color: transparent; border: none">Cerrar sesión</a>
+				<a href="#" onClick="salir()"  data-role="button" data-inline="true" data-icon="power" data-iconpos="left" style="background-color: transparent; border: none">Salir</a>
+			</div>
 			<div data-role="footer" id="ftrUsr4">
 				<div align="center">
-					<a href="#leftPanel4" data-theme="d"><img class="imagenFooter" id="logoFtr3" alt="logo" src="images/ojo_glance_bco.png"/></a>
+					<a href="#leftPanel4" ><img class="imagenFooter" id="logoFtr4" alt="logo" src="images/ojo_glance_bco.png"/></a>
 					<br/>
 					<br/>
 				</div>
 			</div>
 		</div>
-		<div data-role="page" data-theme="b" id="fotosPerfil" style="width: 100%; font-family:'Tw Cen MT'" align="center">
+		<div data-role="page" data-theme="b" id="fotosPerfil" align="center">
 			<div data-role="content" id="lblFotos" class="backColor">
 				<label>Usuario</label>
 				<span>Galería de fotos y videos</span>
@@ -241,8 +225,11 @@
 					</div>
 				</div>
 			</div>
-			<div data-role="panel" id="leftPanel5" data-theme="b">
-				<a href="#usrExistente" data-role="button" data-mini="true" data-inline="true" data-icon="home" data-iconpos="right">Home</a>
+			<div data-role="panel" id="leftPanel5" data-display="overlay" class="overlayPanel" style=" background: rgba(3,3,3,0.9);" align="left">
+				<a href="#usrExistente" data-transition="pop" data-role="button" data-inline="true" data-icon="home" data-iconpos="left" style="background-color: transparent; border: none">Home</a><br />
+				<a href="#perfilPublico" data-transition="pop" data-role="button" data-inline="true" data-icon="user" data-iconpos="left" style="background-color: transparent; border: none">Mi perfil</a>
+				<a href="#page1" data-transition="pop" data-role="button" data-inline="true" data-icon="delete" data-iconpos="left" style="background-color: transparent; border: none">Cerrar sesión</a>
+				<a href="#" onClick="salir()"  data-role="button" data-inline="true" data-icon="power" data-iconpos="left" style="background-color: transparent; border: none">Salir</a>
 			</div>
 			<div data-role="footer" id="ftrUsr5">
 				<div align="center">
@@ -300,14 +287,17 @@
 				<div data-role="content" id="inpRptPass" class="inputDatosUser">
 					<input type="password" id="inputRptPass">
 				</div>
-				<a class="ui-btn ui-btn-b btnGenerico">Guardar</a>
+				<a class="ui-btn ui-btn-b btnUsrEsp">Guardar</a>
 			</div>
-			<div data-role="panel" id="leftPanel6" data-theme="b">
-					<a href="#usrExistente" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Home</a>
+			<div data-role="panel" id="leftPanel6" data-display="overlay" class="overlayPanel" style=" background: rgba(3,3,3,0.9);" align="left">
+					<a href="#usrExistente" data-transition="pop" data-role="button" data-inline="true" data-icon="home" data-iconpos="left" style="background-color: transparent; border: none">Home</a><br />
+					<a href="#perfilPublico" data-transition="pop" data-role="button" data-inline="true" data-icon="user" data-iconpos="left" style="background-color: transparent; border: none">Mi perfil</a>
+					<a href="#page1" data-transition="pop" data-role="button" data-inline="true" data-icon="delete" data-iconpos="left" style="background-color: transparent; border: none">Cerrar sesión</a>
+					<a href="#" onClick="salir()"  data-role="button" data-inline="true" data-icon="power" data-iconpos="left" style="background-color: transparent; border: none">Salir</a>
 				</div>
 			<div data-role="footer" id="ftrUsr6">
 				<div align="center">
-					<a href="#leftPanel6" data-theme="d"><img class="imagenFooter" id="logoFtr3" alt="logo" src="images/ojo_glance_bco.png"/></a>
+					<a href="#leftPanel6" data-theme="d"><img class="imagenFooter" id="logoFtr6" alt="logo" src="images/ojo_glance_bco.png"/></a>
 					<br/>
 					<br/>
 				</div>
@@ -593,9 +583,17 @@
 			</div>	
 		</div>
 		<div data-role="page" id="navegacion1" data-theme="b">
+			<div data-role="panel" id="leftPanelEsp1" data-display="overlay" class="overlayPanel" style=" background: rgba(3,3,3,0.9);"  align="left">
+				<a href="#usrExistente" data-transition="pop" data-role="button" data-inline="true" data-icon="home" data-iconpos="left" style="background-color: transparent; border: none">Home</a><br />
+				<a href="#" data-transition="pop" data-role="button" data-inline="true" data-icon="mail" data-iconpos="left" style="background-color: transparent; border: none">Mensajes</a>
+				<a href="#" data-transition="pop" data-role="button" data-inline="true" data-icon="heart" data-iconpos="left" style="background-color: transparent; border: none">Agregar a Favoritos</a>
+				<a href="#" data-transition="pop" data-role="button" data-inline="true" data-icon="comment" data-iconpos="left" style="background-color: transparent; border: none">Chat</a>				
+				<a href="#page1" data-transition="pop" data-role="button" data-inline="true" data-icon="delete" data-iconpos="left" style="background-color: transparent; border: none">Cerrar sesión</a>
+				<a href="#" onClick="salir()"  data-role="button" data-inline="true" data-icon="power" data-iconpos="left" style="background-color: transparent; border: none">Salir</a>
+			</div>
 			<div data-role="header" id="headNavegacion" class="imagenHdr">
 				<div id="logoHeader" align="left">
-					<img class="imagenFooter" id="logoHdr1" alt="logo" src="images/ojo_glance_bco.png"/>
+					<a href="#leftPanelEsp1"><img class="imagenFooter" id="logoHdr1" alt="logo" src="images/ojo_glance_bco.png"/></a>
 				</div>
 				<div id="btnHeader" align="right">
 					<a class="ui-btn ui-btn-b" id="btnFiltro">Filtros</a>
@@ -603,17 +601,19 @@
 			</div>
 			<div data-role="content" id="contPerfiles">
 				<div data-role="content" id="perfil1" class="divPerfil">
-					<div id="fotoPerfil1" class="divFotoPerfil">
-						<img  class="fotoPerfilNav" src="images/woman1.jpg">
-					</div>
-					<div id="textoPerfil1" class="divTextoPerfil">
-						<p>
-							NOMBRE: Pirula Pirulez<br />
-							Edad: 40<br />
-							Ubicación: Córdoba
-						</p>						
-					</div>					
-				</div>
+					<a href="#detPerfil1" style="text-decoration: none;">
+						<div id="fotoPerfil1" class="divFotoPerfil">
+							<img  class="fotoPerfilNav" src="images/woman1.jpg">
+						</div>
+						<div id="textoPerfil1" class="divTextoPerfil">
+							<p>
+								NOMBRE: Pirula Pirulez<br />
+								Edad: 40<br />
+								Ubicación: Córdoba
+							</p>						
+						</div>
+					</a>
+				</div>					
 				<br />
 				<div data-role="content" id="perfil2" class="divPerfil">
 					<div id="fotoPerfil2" class="divFotoPerfil">
@@ -629,5 +629,24 @@
 				</div>
 			</div>
 		</div>
-    </body>
+		<div data-role="page" id="detPerfil1" data-theme="b">
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+				  <div class="swiper-slide">Slide 1</div>
+				  <div class="swiper-slide">Slide 2</div>
+				  <div class="swiper-slide">Slide 3</div>
+				  <div class="swiper-slide">Slide 4</div>
+				  <div class="swiper-slide">Slide 5</div>
+				  <div class="swiper-slide">Slide 6</div>
+				  <div class="swiper-slide">Slide 7</div>
+				  <div class="swiper-slide">Slide 8</div>
+				  <div class="swiper-slide">Slide 9</div>
+				  <div class="swiper-slide">Slide 10</div>
+				</div>
+				
+				<div class="swiper-button-next"></div>
+				<div class="swiper-button-prev"></div>
+			  </div>			  
+		</div>		
+	</body>
 </html>
