@@ -1,652 +1,782 @@
 <!DOCTYPE html>
 <html lang="ES-es">
     <head>
-		<script language="JavaScript">
-			history.pushState(null, null, location.href);
-			window.onpopstate = function () {
-				history.go(1);
-			};
-		</script>
+        <script language="JavaScript">
+            history.pushState(null, null, location.href);
+            window.onpopstate = function () {
+                history.go(1);
+            };
+        </script>
         <meta charset="utf-8">
         <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-		<link rel="stylesheet" href="css/estilos.css"/>
-		<script type="text/javascript"  src="JQuery/jquery-1.1.3.min.js"></script>
-		<script type="text/javascript"  src="JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
-		<link rel="stylesheet" href="JQueryMobile/jquery.mobile-1.4.5.min.css" />
-		<link rel="stylesheet" href="dist/css/swiper.min.css">
-		<script type="text/javascript"  src="js/scripts.js"></script>
-		<script type="text/javascript" src="cordova.js"></script>
-		<script src="dist/js/swiper.min.js"></script>
-		
+        <link rel="stylesheet" href="css/estilos.css"/>
+        <script type="text/javascript"  src="JQuery/jquery-1.1.3.min.js"></script>
+        <script type="text/javascript"  src="JQueryMobile/jquery.mobile-1.4.5.min.js"></script>
+        <link rel="stylesheet" href="JQueryMobile/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" href="bootstrap/bootstrap.min.css">
+        <script type="text/javascript"  src="js/scripts.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="bootstrap/bootstrap.min.js"></script>
+        <title>glanceApp</title>
     </head>
     <body onLoad="iniciar()" >
         <div data-role="page" id="inicio" onload="iniciar()">
-			<div data-role="content"> 
-				<div id="div_logo" align="center" class="pant_inicio">
-					<img id="logo" alt="logo" src="images/LOGO1CO.png"/>
-					<div id="usr">	
-						<label></label>
-					</div>
-					<br/>
-				</div>
-			</div>
+            <div data-role="content"> 
+                <div id="div_logo" align="center" class="pant_inicio">
+                    <img id="logo" alt="logo" src="images/LOGO1CO.png"/>
+                    <div id="usr">	
+                        <label></label>
+                    </div>
+                    <br/>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="page1">
+            <div data-role="content"> 
+                <div id="tipoUsr" align="center">
+                    <br/>
+                    <label></label>
+                    <div id="btnsUsr">
+                        <a id="usuario" class="ui-btn ui-btn-b btnUsrEsp" href="#loginUsr">USUARIO</a>
+                        <br/>
+                        <br/>
+                        <a id="espectador" class="ui-btn ui-btn-b btnUsrEsp" href="#loginEsp">ESPECTADOR</a>
+                    </div>
+                </div>
+                <br/>
+            </div>
+            <div data-role="footer" id="ftrUsr">
+                <div align="center">
+                    <img class="imagenFooter" id="logoFtr1" alt="logo" src="images/ojo_glance_bco.png"/>
+                    <br/>
+                    <br/>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" data-theme="b" id="loginUsr" class="loginUsr">
+            <div data-role="content">
+                <div data-role="content" id="datosAcceso" align="center">
+                    <div id="inputUser" align="center">
+                        <div id="divImgUsr" class="imgLogin">
+                            <img id="imgUsr" src="JQueryMobile/images/icons-png/user-white.png" />
+                        </div>
+                        <div id="inputUsr" class="inputLogin" >
+                            <input id="nombreUsr" type="text" placeholder="Usuario"/>
+                        </div>
+                    </div>
+                    <div id="inputPass">
+                        <div id="divImgPass" class="imgLogin" align="center">
+                            <img id="imgPass" src="JQueryMobile/images/icons-png/lock-white.png" />
+                        </div>
+                        <div id="inputTextPass" class="inputLogin" >
+                            <input id="passwordUsr" type="password" placeholder="Contraseña"/>
+                        </div>
+                    </div>
+                    <div id="olvidoPass" align="center">
+                        <br/>
+                        <span>Usuario/contraseña olvidados?</span>
+                        <br/>
+                        <a>Toque aquí...</a>
+                    </div>
+                    <br/>
+                    <a class="ui-btn ui-btn-b btnUsrEsp" href="#usrExistente" >ENTRAR</a>
+                    <span>o...</span>
+                    <br/>
+                    <a class="ui-btn ui-btn-b btnUsrEsp" href="#usrNuevo">Crear Usuario</a>
+                </div>
+            </div>
+            <div data-role="footer" id="ftrUsr2">
+                <div align="center">
+                    <img class="imagenFooter" id="logoFtr2" alt="logo" src="images/ojo_glance_bco.png"/>
+                    <br/>
+                    <br/>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" data-theme="b" id="usrExistente">
+            <div data-role="content" >
+                <div align="center" id="usrData">
+                    <div id="usrFoto" style="width: 100%; margin-top: 15%; ">
+                        <img src="images/woman1.jpg" style="width: 100px; height: 100px; border-radius: 50px"/>
+                        <div><br/></div>
+                        <label>Juana de Arco</label>
+                    </div>
+                    <div><br/></div>
+                    <div><br/></div>
+                    <div id="optionBtns">
+                        <a class="ui-btn ui-btn-b btnUsrEsp" href="#perfilPublico" data-transition="pop">Mi perfil público</a>
+                        <a class="ui-btn ui-btn-b btnUsrEsp" href="#fotosPerfil" data-transition="pop">Fotos y videos</a>
+                        <a class="ui-btn ui-btn-b btnUsrEsp" href="#datosUsuario" data-transition="pop">Mis datos</a>
+                    </div>
+                </div>
+            </div>
+            <div data-role="footer" id="ftrUsr3">
+                <div align="center">
+                    <a href="#overlayPanel" data-theme="d"><img class="imagenFooter" id="logoFtr3" alt="logo" src="images/ojo_glance_bco.png"/></a>
+                    <br/>
+                    <br/>
+                </div>
+            </div>
+            <div data-role="panel" id="overlayPanel"  data-display="overlay" class="overlayPanel" style=" background: rgba(3,3,3,0.95);" >
+                <a href="#page1" data-transition="pop" data-role="button" data-inline="true" data-icon="delete" data-iconpos="left" style="background-color: transparent; border: none">Cerrar sesión</a>
+                <a href="#" onClick="salir()"  data-role="button" data-inline="true" data-icon="power" data-iconpos="left" style="background-color: transparent; border: none">Salir</a>
+            </div>
+
+        </div>
+        <div data-role="page" data-theme="b" id="perfilPublico" style="width: 100%; overflow: auto" align="center">
+            <div data-role="content" id="datosPerfilPublico">
+                <div style="min-height: 100% !important">
+                    <label>Usuario</label>
+                    <div id="lbledad" align="center">
+                        <label id="edad" style="width: 45%; float: left">Edad:<input type="text" id="inputEdad"></label>
+                        <label id="estatura" style="width: 45%;float: right">Estatura:<input type="text" id="inputEstat"></label>						
+                    </div>
+                    <div id="lblmedidas" align="center">
+                        <label id="medidas" style="width: 45%; float: left">Medidas:<input type="text" id="inputMed"></label>
+                        <label id="pelo" style="width: 45%;float: right">Cabello:<input type="text" id="inputPelo"></label>						
+                    </div>
+                    <div id="ojos" align="center">
+                        <label id="ojos" style="width: 45%; float: left">Ojos:<input type="text" id="inputOjos"></label>
+                        <label id="piel" style="width: 45%;float: right">Piel:<input type="text" id="inputPiel"></label>						
+                    </div>
+                    <div data-role="content" style="width: 100%; padding-top: 0; padding-bottom: 0">
+                        <div data-role="content" style="width: 40%; float: left; padding-left: 0; padding-bottom: 0; padding-top: 0">
+                            <div data-role="content" id="lblTatoo" style="float: left !important; padding-top: 0; padding-left: 0; padding-bottom: 0">
+                                <label id="tatoos">Tatoos:</label>
+                            </div>
+                            <div data-role="content" id="inpTatoo" style="padding-top: 0; padding-left: 0">
+                                <input type="checkbox" id="inputTatoo">
+                            </div>
+                        </div>
+                        <div data-role="content" style="width: 45%; float: right; padding-right: 0; padding-bottom: 0; padding-top: 0">
+                            <div data-role="content" id="lblPier" style="float: left !important; padding-top: 0; padding-left: 0; padding-bottom: 0">
+                                <label id="piercings">Piercings:</label>
+                            </div>
+                            <div data-role="content" id="inpPier" style="padding-top: 0; padding-left: 0">
+                                <input type="checkbox" id="inputPier">
+                            </div>
+                        </div>
+                    </div>
+                    <div data-role="content" id="lblCiudad" class="lblPerfilPub">
+                        <label id="ciudad">Ciudad:</label>
+                    </div>
+                    <div data-role="content" id="inpCiudad" class="inputPerfilPublico">
+                        <input type="text" id="inputCiudad">
+                    </div>
+                    <div id="lblSobre" align="center">
+                        <label id="sobreMi" style="width: 100%; float: left">Sobre mí:<textarea id="inputSobre" style="min-height: 30% !important"></textarea></label>					
+                    </div>
+                </div>
+                <br />
+                <br />
+            </div>
+            <div data-role="panel" id="leftPanel4" data-display="overlay" class="overlayPanel" style=" background: rgba(3,3,3,0.9);"  align="left">
+                <a href="#usrExistente" data-transition="pop" data-role="button" data-inline="true" data-icon="home" data-iconpos="left" style="background-color: transparent; border: none">Home</a><br />
+                <a href="#fotosPerfil" data-transition="pop" data-role="button" data-inline="true" data-icon="user" data-iconpos="left" style="background-color: transparent; border: none">Fotos y videos</a>
+                <a href="#datosUsuario" data-transition="pop" data-role="button" data-inline="true" data-icon="user" data-iconpos="left" style="background-color: transparent; border: none">Mis datos</a>
+                <a href="#page1" data-transition="pop" data-role="button" data-inline="true" data-icon="delete" data-iconpos="left" style="background-color: transparent; border: none">Cerrar sesión</a>
+                <a href="#" onClick="salir()"  data-role="button" data-inline="true" data-icon="power" data-iconpos="left" style="background-color: transparent; border: none">Salir</a>
+            </div>
+            <div data-role="footer" id="ftrUsr4">
+                <div align="center">
+                    <a href="#leftPanel4" ><img class="imagenFooter" id="logoFtr4" alt="logo" src="images/ojo_glance_bco.png"/></a>
+                    <br/>
+                    <br/>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" data-theme="b" id="fotosPerfil" align="center">
+            <div data-role="content" id="lblFotos" class="backColor">
+                <label>Usuario</label>
+                <span>Galería de fotos y videos</span>
+                <div>
+                    <br/>
+                </div>
+                <div data-role="content" id="contFotos" style="margin: 0 0 0 0; padding: 0 0 0 0; min-width: 100%">
+                    <div data-role="content" id="fotoUno" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
+                        <img id="foto1" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto1">
+                        <a class="ui-btn ui-btn-b btnGaleria">Subir</a>
+                    </div>
+                    <div data-role="content" id="fotoDos" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
+                        <img id="foto2" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto2">
+                        <a class="ui-btn ui-btn-b btnGaleria">Subir</a>
+                    </div>
+                    <div data-role="content" id="fotoTres" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
+                        <img id="foto3" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto3">
+                        <a class="ui-btn ui-btn-b btnGaleria">Subir</a>
+                    </div>
+                    <div data-role="content" id="fotoCuatro" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
+                        <img id="foto4" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto4">
+                        <a class="ui-btn ui-btn-b btnGaleria">Subir</a>
+                    </div>
+                    <div data-role="content" id="fotoCinco" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
+                        <img id="foto5" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto5">
+                        <a class="ui-btn ui-btn-b btnGaleria">Subir</a>
+                    </div>
+                    <div data-role="content" id="fotoSeis" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
+                        <img id="foto6" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto6">
+                        <a class="ui-btn ui-btn-b btnGaleria">Subir</a>
+                    </div>
+                    <div data-role="content" id="videoUno" style="float: left; width: 48%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
+                        <img id="video1" src="images/video.png" style="width: 70px; height: 70px;" alt="Video1">
+                        <a class="ui-btn ui-btn-b btnGaleria">Subir</a>
+                    </div>
+                    <div data-role="content" id="videoDos" style="float: right; width: 48%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
+                        <img id="video2" src="images/video.png" style="width: 70px; height: 70px;" alt="Video2">
+                        <a class="ui-btn ui-btn-b btnGaleria">Subir</a>
+                    </div>
+                </div>
+            </div>
+            <div data-role="panel" id="leftPanel5" data-display="overlay" class="overlayPanel" style=" background: rgba(3,3,3,0.9);" align="left">
+                <a href="#usrExistente" data-transition="pop" data-role="button" data-inline="true" data-icon="home" data-iconpos="left" style="background-color: transparent; border: none">Home</a><br />
+                <a href="#perfilPublico" data-transition="pop" data-role="button" data-inline="true" data-icon="user" data-iconpos="left" style="background-color: transparent; border: none">Mi perfil</a>
+                <a href="#page1" data-transition="pop" data-role="button" data-inline="true" data-icon="delete" data-iconpos="left" style="background-color: transparent; border: none">Cerrar sesión</a>
+                <a href="#" onClick="salir()"  data-role="button" data-inline="true" data-icon="power" data-iconpos="left" style="background-color: transparent; border: none">Salir</a>
+            </div>
+            <div data-role="footer" id="ftrUsr5">
+                <div align="center">
+                    <a href="#leftPanel5" data-theme="d"><img class="imagenFooter" id="logoFtr5" alt="logo" src="images/ojo_glance_bco.png"/></a>
+                    <br/>
+                    <br/>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" data-theme="b" id="datosUsuario" style="width: 100%; overflow: auto" align="center">
+            <div data-role="header">
+                <label>Usuario</label>
+                <span>Editar datos de usuario</span>
+            </div>
+            <div data-role="content" id="datosPerfilPublico">
+                <div data-role="content" id="lblNick" class="lblDatosUser">
+                    <label id="edad">Nombre usuario:</label>
+                </div>
+                <div data-role="content" id="inpNick" class="inputDatosUser">
+                    <input type="text" id="inputNick">
+                </div>
+                <div data-role="content" id="lblNomAp" class="lblDatosUser">
+                    <label id="estatura">Nombre Apellido:</label>
+                </div>
+                <div data-role="content" id="inpNomAp" class="inputDatosUser">
+                    <input type="text" id="inputNomAp">
+                </div>
+                <div data-role="content" id="lblFecNac" class="lblDatosUser">
+                    <label id="medidas">Fecha de nacimiento:</label>
+                </div>
+                <div data-role="content" id="inpFecNac" class="inputDatosUser">
+                    <input type="text" id="inputFecNac">
+                </div>
+                <div data-role="content" id="lblTel" class="lblDatosUser">
+                    <label id="pelo">Teléfono contacto:</label>
+                </div>
+                <div data-role="content" id="inpTel" class="inputDatosUser">
+                    <input type="text" id="inputTel">
+                </div>
+                <div data-role="content" id="lblEmail" class="lblDatosUser">
+                    <label id="ojos">Correo Electrónico:</label>
+                </div>
+                <div data-role="content" id="inpEmail" class="inputDatosUser">
+                    <input type="email" id="inputEmail">
+                </div>
+                <div data-role="content" id="lblNewPass" class="lblDatosUser">
+                    <label id="piel">Contraseña nueva:</label>
+                </div>
+                <div data-role="content" id="inpNewPass" class="inputDatosUser">
+                    <input type="password" id="inputNewPass">
+                </div>
+                <div data-role="content" id="lblRptPass" class="lblDatosUser">
+                    <label id="ciudad">Repetir contraseña:</label>
+                </div>
+                <div data-role="content" id="inpRptPass" class="inputDatosUser">
+                    <input type="password" id="inputRptPass">
+                </div>
+                <a class="ui-btn ui-btn-b btnUsrEsp">Guardar</a>
+            </div>
+            <div data-role="panel" id="leftPanel6" data-display="overlay" class="overlayPanel" style=" background: rgba(3,3,3,0.9);" align="left">
+                <a href="#usrExistente" data-transition="pop" data-role="button" data-inline="true" data-icon="home" data-iconpos="left" style="background-color: transparent; border: none">Home</a><br />
+                <a href="#perfilPublico" data-transition="pop" data-role="button" data-inline="true" data-icon="user" data-iconpos="left" style="background-color: transparent; border: none">Mi perfil</a>
+                <a href="#page1" data-transition="pop" data-role="button" data-inline="true" data-icon="delete" data-iconpos="left" style="background-color: transparent; border: none">Cerrar sesión</a>
+                <a href="#" onClick="salir()"  data-role="button" data-inline="true" data-icon="power" data-iconpos="left" style="background-color: transparent; border: none">Salir</a>
+            </div>
+            <div data-role="footer" id="ftrUsr6">
+                <div align="center">
+                    <a href="#leftPanel6" data-theme="d"><img class="imagenFooter" id="logoFtr6" alt="logo" src="images/ojo_glance_bco.png"/></a>
+                    <br/>
+                    <br/>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="usrNuevo" data-theme="b" class="stylePages" align="center">
+            <div data-role="content" style="height: 25%;">
+                <p id="bienvenidaUsr" class="bienvenida">TEXTO DE BIENVENIDA.<br /> Escribir aquí el texto que se desee dar al nuevo usuario indicando 
+                    brevemente las características de la app para su uso</p>
+            </div>
+            <div data-role="content" style="height: 25%;">
+                <p id="bases" class="bienvenida">Aquí va un visor para las bases y condiciones</p>
+            </div>
+            <div data-role="content" style="padding-bottom: 0px !important;">
+                <label>
+                    <input type="checkbox"/>Acepto las bases y condiciones
+                </label>
+            </div>
+            <div data-role="content">
+                <a href="#usrNvo1" class="ui-btn ui-btn-b btnGenerico">Siguiente</a>
+            </div>
+            <div data-role="footer" id="ftrUsr7">
+                <div align="center">
+                    <a href="#" data-theme="d"><img class="imagenFooter" id="logoFtr3" alt="logo" src="images/ojo_glance_bco.png"/></a>
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+		<div data-role="page" id="espNuevo" data-theme="b" class="stylePages" align="center">
+            <div data-role="content" style="height: 25%;">
+                <p id="bienvenidaEsp" class="bienvenida">TEXTO DE BIENVENIDA.<br /> Escribir aquí el texto que se desee dar al nuevo Espectador indicando 
+                    brevemente las características de la app para su uso</p>
+            </div>
+            <div data-role="content" style="height: 25%;">
+                <p id="basesEsp" class="bienvenida">Aquí va un visor para las bases y condiciones</p>
+            </div>
+            <div data-role="content" style="padding-bottom: 0px !important;" align="center">
+                <label class="btnGenerico">
+                    <input type="checkbox" style="visibility: hidden"/>Acepto las bases y condiciones
+                </label>
+            </div>
+            <div data-role="content">
+                <a href="#espNvo1" class="ui-btn ui-btn-b btnGenerico">Siguiente</a>
+            </div>
+            <div data-role="footer" id="ftrUsr7">
+                <div align="center">
+                    <a href="#" data-theme="d"><img class="imagenFooter" id="logoFtr3" alt="logo" src="images/ojo_glance_bco.png"/></a>
+                    <br />
+                    <br />
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="usrNvo1" data-theme="b" class="stylePages" align="center">
+            <div data-role="header">
+                <label>Paso 1: Datos personales</label>
+            </div>
+            <div data-role="content" id="datosPerfilPublico">
+                <div data-role="content" id="lblNickNvo" class="lblDatosUser">
+                    <label id="edad">Nombre usuario:</label>
+                </div>
+                <div data-role="content" id="inpNickNvo" class="inputDatosUser">
+                    <input type="text" id="inputNickNvo">
+                </div>
+                <div data-role="content" id="lblNomApNvo" class="lblDatosUser">
+                    <label id="estatura">Nombre Apellido:</label>
+                </div>
+                <div data-role="content" id="inpNomApNvo" class="inputDatosUser">
+                    <input type="text" id="inputNomApNvo">
+                </div>
+                <div data-role="content" id="lblFecNacNvo" class="lblDatosUser">
+                    <label id="medidas">Fecha de nacimiento:</label>
+                </div>
+                <div data-role="content" id="inpFecNacNvo" class="inputDatosUser">
+                    <input type="text" id="inputFecNacNvo">
+                </div>
+                <div data-role="content" id="lblTelNvo" class="lblDatosUser">
+                    <label id="pelo">Teléfono contacto:</label>
+                </div>
+                <div data-role="content" id="inpTelNvo" class="inputDatosUser">
+                    <input type="text" id="inputTelNvo">
+                </div>
+                <div data-role="content" id="lblEmailNvo" class="lblDatosUser">
+                    <label id="usrMail">Correo Electrónico:</label>
+                </div>
+                <div data-role="content" id="inpEmailNvo" class="inputDatosUser">
+                    <input type="email" id="inputEmailNvo">
+                </div>
+                <div data-role="content" id="lblNewPassNvo" class="lblDatosUser">
+                    <label id="pass">Contraseña nueva:</label>
+                </div>
+                <div data-role="content" id="inpNewPassNvo" class="inputDatosUser">
+                    <input type="password" id="inputNewPassNvo">
+                </div>
+                <div data-role="content" id="lblRptPassNvo" class="lblDatosUser">
+                    <label id="repPass">Repetir contraseña:</label>
+                </div>
+                <div data-role="content" id="inpRptPassNvo" class="inputDatosUser">
+                    <input type="password" id="inputRptPassNvo">
+                </div>
+                <div data-role="content" style="padding-bottom: 0px !important"></div>
+                <a href="#pagoMembresia" class="ui-btn ui-btn-b btnGenerico">Siguiente</a>				
+            </div>
 		</div>
-		<div data-role="page" id="page1">
-			<div data-role="content"> 
-				<div id="tipoUsr" align="center">
-					<br/>
-					<label></label>
-					<div id="btnsUsr">
-						<a id="usuario" class="ui-btn ui-btn-b btnUsrEsp" href="#loginUsr">USUARIO</a>
-						<br/>
-						<br/>
-						<a id="espectador" class="ui-btn ui-btn-b btnUsrEsp" href="#loginEsp">ESPECTADOR</a>
-					</div>
-				</div>
-				<br/>
-			</div>
-			<div data-role="footer" id="ftrUsr">
-				<div align="center">
-					<img class="imagenFooter" id="logoFtr1" alt="logo" src="images/ojo_glance_bco.png"/>
-					<br/>
-					<br/>
-				</div>
-			</div>
-		</div>
-		<div data-role="page" data-theme="b" id="loginUsr" class="loginUsr">
-			<div data-role="content">
-				<div data-role="content" id="datosAcceso" align="center">
-					<div id="inputUser" align="center">
-						<div id="divImgUsr" class="imgLogin">
-							<img id="imgUsr" src="JQueryMobile/images/icons-png/user-white.png" />
-						</div>
-						<div id="inputUsr" class="inputLogin" >
-							<input id="nombreUsr" type="text" placeholder="Usuario"/>
-						</div>
-					</div>
-					<div id="inputPass">
-						<div id="divImgPass" class="imgLogin" align="center">
-							<img id="imgPass" src="JQueryMobile/images/icons-png/lock-white.png" />
-						</div>
-						<div id="inputTextPass" class="inputLogin" >
-							<input id="passwordUsr" type="password" placeholder="Contraseña"/>
-						</div>
-					</div>
-					<div id="olvidoPass" align="center">
-						<br/>
-						<span>Usuario/contraseña olvidados?</span>
-						<br/>
-						<a>Toque aquí...</a>
-					</div>
-					<br/>
-					<a class="ui-btn ui-btn-b btnUsrEsp" value="ENTRAR" href="#usrExistente" >ENTRAR</a>
-					<span>o...</span>
-					<br/>
-					<a class="ui-btn ui-btn-b btnUsrEsp" value="Crear Usuario" href="#usrNuevo">Crear Usuario</a>
-				</div>
-			</div>
-			<div data-role="footer" id="ftrUsr2">
-				<div align="center">
-					<img class="imagenFooter" id="logoFtr2" alt="logo" src="images/ojo_glance_bco.png"/>
-					<br/>
-					<br/>
-				</div>
-			</div>
-		</div>
-		<div data-role="page" data-theme="b" id="usrExistente">
-			<div data-role="content" >
-				<div align="center" id="usrData">
-					<div id="usrFoto" style="width: 100%; margin-top: 15%; ">
-						<img src="images/woman1.jpg" style="width: 100px; height: 100px; border-radius: 50px"/>
-						<div><br/></div>
-						<label>Juana de Arco</label>
-					</div>
-					<div><br/></div>
-					<div><br/></div>
-					<div id="optionBtns">
-						<a class="ui-btn ui-btn-b btnUsrEsp" value="ENTRAR" href="#perfilPublico" data-transition="pop">Mi perfil público</a>
-						<a class="ui-btn ui-btn-b btnUsrEsp" value="ENTRAR" href="#fotosPerfil" data-transition="pop">Fotos y videos</a>
-						<a class="ui-btn ui-btn-b btnUsrEsp" value="ENTRAR" href="#datosUsuario" data-transition="pop">Mis datos</a>
-					</div>
-				</div>
-			</div>
-			<div data-role="footer" id="ftrUsr3">
-				<div align="center">
-					<a href="#overlayPanel" data-theme="d"><img class="imagenFooter" id="logoFtr3" alt="logo" src="images/ojo_glance_bco.png"/></a>
-					<br/>
-					<br/>
-				</div>
-			</div>
-			<div data-role="panel" id="overlayPanel"  data-display="overlay" class="overlayPanel" style=" background: rgba(3,3,3,0.95);" >
-				<a href="#usrExistente" data-rel="close" data-role="button" data-mini="true" data-inline="true" data-icon="delete" data-iconpos="right">Home</a>
-			</div>
-			
-		</div>
-		<div data-role="page" data-theme="b" id="perfilPublico" style="width: 100%; overflow: auto" align="center">
-			<div data-role="content" id="datosPerfilPublico">
-				<div style="min-height: 100% !important">
-					<label>Usuario</label>
-					<div id="lbledad" align="center">
-						<label id="edad" style="width: 45%; float: left">Edad:<input type="text" id="inputEdad"></label>
-						<label id="estatura" style="width: 45%;float: right">Estatura:<input type="text" id="inputEstat"></label>						
-					</div>
-					<div id="lblmedidas" align="center">
-						<label id="medidas" style="width: 45%; float: left">Medidas:<input type="text" id="inputMed"></label>
-						<label id="pelo" style="width: 45%;float: right">Cabello:<input type="text" id="inputPelo"></label>						
-					</div>
-					<div id="ojos" align="center">
-						<label id="ojos" style="width: 45%; float: left">Ojos:<input type="text" id="inputOjos"></label>
-						<label id="piel" style="width: 45%;float: right">Piel:<input type="text" id="inputPiel"></label>						
-					</div>
-					<div data-role="content" style="width: 100%; padding-top: 0; padding-bottom: 0">
-						<div data-role="content" style="width: 40%; float: left; padding-left: 0; padding-bottom: 0; padding-top: 0">
-							<div data-role="content" id="lblTatoo" style="float: left !important; padding-top: 0; padding-left: 0; padding-bottom: 0">
-								<label id="tatoos">Tatoos:</label>
-							</div>
-							<div data-role="content" id="inpTatoo" style="padding-top: 0; padding-left: 0">
-								<input type="checkbox" id="inputTatoo">
-							</div>
-						</div>
-						<div data-role="content" style="width: 45%; float: right; padding-right: 0; padding-bottom: 0; padding-top: 0">
-							<div data-role="content" id="lblPier" style="float: left !important; padding-top: 0; padding-left: 0; padding-bottom: 0">
-								<label id="piercings">Piercings:</label>
-							</div>
-							<div data-role="content" id="inpPier" style="padding-top: 0; padding-left: 0">
-								<input type="checkbox" id="inputPier">
-							</div>
-						</div>
-					</div>
-					<div data-role="content" id="lblCiudad" class="lblPerfilPub">
-						<label id="ciudad">Ciudad:</label>
-					</div>
-					<div data-role="content" id="inpCiudad" class="inputPerfilPublico">
-						<input type="text" id="inputCiudad">
-					</div>
-					<div id="lblSobre" align="center">
-						<label id="sobreMi" style="width: 100%; float: left">Sobre mí:<textarea type="text" id="inputSobre" style="min-height: 30% !important"></textarea></label>					
-					</div>
-				</div>
-				<br />
-				<br />
-			</div>
-			<div data-role="panel" id="leftPanel4" data-display="overlay" class="overlayPanel" style=" background: rgba(3,3,3,0.9);"  align="left">
-				<a href="#usrExistente" data-transition="pop" data-role="button" data-inline="true" data-icon="home" data-iconpos="left" style="background-color: transparent; border: none">Home</a><br />
-				<a href="#perfilPublico" data-transition="pop" data-role="button" data-inline="true" data-icon="user" data-iconpos="left" style="background-color: transparent; border: none">Mi perfil</a>
-				<a href="#page1" data-transition="pop" data-role="button" data-inline="true" data-icon="delete" data-iconpos="left" style="background-color: transparent; border: none">Cerrar sesión</a>
-				<a href="#" onClick="salir()"  data-role="button" data-inline="true" data-icon="power" data-iconpos="left" style="background-color: transparent; border: none">Salir</a>
-			</div>
-			<div data-role="footer" id="ftrUsr4">
-				<div align="center">
-					<a href="#leftPanel4" ><img class="imagenFooter" id="logoFtr4" alt="logo" src="images/ojo_glance_bco.png"/></a>
-					<br/>
-					<br/>
-				</div>
-			</div>
-		</div>
-		<div data-role="page" data-theme="b" id="fotosPerfil" align="center">
-			<div data-role="content" id="lblFotos" class="backColor">
-				<label>Usuario</label>
-				<span>Galería de fotos y videos</span>
-				<div>
-					<br/>
-				</div>
-				<div data-role="content" id="contFotos" style="margin: 0 0 0 0; padding: 0 0 0 0; min-width: 100%">
-					<div data-role="content" id="fotoUno" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
-						<img id="foto1" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto1">
-						<a class="ui-btn ui-btn-b btnGaleria">Subir</a>
-					</div>
-					<div data-role="content" id="fotoDos" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
-						<img id="foto2" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto2">
-						<a class="ui-btn ui-btn-b btnGaleria">Subir</a>
-					</div>
-					<div data-role="content" id="fotoTres" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
-						<img id="foto3" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto3">
-						<a class="ui-btn ui-btn-b btnGaleria">Subir</a>
-					</div>
-					<div data-role="content" id="fotoCuatro" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
-						<img id="foto4" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto4">
-						<a class="ui-btn ui-btn-b btnGaleria">Subir</a>
-					</div>
-					<div data-role="content" id="fotoCinco" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
-						<img id="foto5" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto5">
-						<a class="ui-btn ui-btn-b btnGaleria">Subir</a>
-					</div>
-					<div data-role="content" id="fotoSeis" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
-						<img id="foto6" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto6">
-						<a class="ui-btn ui-btn-b btnGaleria">Subir</a>
-					</div>
-					<div data-role="content" id="videoUno" style="float: left; width: 48%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
-						<img id="video1" src="images/video.png" style="width: 70px; height: 70px;" alt="Video1">
-						<a class="ui-btn ui-btn-b btnGaleria">Subir</a>
-					</div>
-					<div data-role="content" id="videoDos" style="float: right; width: 48%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
-						<img id="video2" src="images/video.png" style="width: 70px; height: 70px;" alt="Video2">
-						<a class="ui-btn ui-btn-b btnGaleria">Subir</a>
-					</div>
-				</div>
-			</div>
-			<div data-role="panel" id="leftPanel5" data-display="overlay" class="overlayPanel" style=" background: rgba(3,3,3,0.9);" align="left">
-				<a href="#usrExistente" data-transition="pop" data-role="button" data-inline="true" data-icon="home" data-iconpos="left" style="background-color: transparent; border: none">Home</a><br />
-				<a href="#perfilPublico" data-transition="pop" data-role="button" data-inline="true" data-icon="user" data-iconpos="left" style="background-color: transparent; border: none">Mi perfil</a>
-				<a href="#page1" data-transition="pop" data-role="button" data-inline="true" data-icon="delete" data-iconpos="left" style="background-color: transparent; border: none">Cerrar sesión</a>
-				<a href="#" onClick="salir()"  data-role="button" data-inline="true" data-icon="power" data-iconpos="left" style="background-color: transparent; border: none">Salir</a>
-			</div>
-			<div data-role="footer" id="ftrUsr5">
-				<div align="center">
-					<a href="#leftPanel5" data-theme="d"><img class="imagenFooter" id="logoFtr5" alt="logo" src="images/ojo_glance_bco.png"/></a>
-					<br/>
-					<br/>
-				</div>
-			</div>
-		</div>
-		<div data-role="page" data-theme="b" id="datosUsuario" style="width: 100%; overflow: auto" align="center">
-			<div data-role="header">
-				<label>Usuario</label>
-				<span>Editar datos de usuario</span>
-			</div>
-			<div data-role="content" id="datosPerfilPublico">
-				<div data-role="content" id="lblNick" class="lblDatosUser">
-					<label id="edad">Nombre usuario:</label>
-				</div>
-				<div data-role="content" id="inpNick" class="inputDatosUser">
-					<input type="text" id="inputNick">
-				</div>
-				<div data-role="content" id="lblNomAp" class="lblDatosUser">
-					<label id="estatura">Nombre Apellido:</label>
-				</div>
-				<div data-role="content" id="inpNomAp" class="inputDatosUser">
-					<input type="text" id="inputNomAp">
-				</div>
-				<div data-role="content" id="lblFecNac" class="lblDatosUser">
-					<label id="medidas">Fecha de nacimiento:</label>
-				</div>
-				<div data-role="content" id="inpFecNac" class="inputDatosUser">
-					<input type="text" id="inputFecNac">
-				</div>
-				<div data-role="content" id="lblTel" class="lblDatosUser">
-					<label id="pelo">Teléfono contacto:</label>
-				</div>
-				<div data-role="content" id="inpTel" class="inputDatosUser">
-					<input type="text" id="inputTel">
-				</div>
-				<div data-role="content" id="lblEmail" class="lblDatosUser">
-					<label id="ojos">Correo Electrónico:</label>
-				</div>
-				<div data-role="content" id="inpEmail" class="inputDatosUser">
-					<input type="email" id="inputEmail">
-				</div>
-				<div data-role="content" id="lblNewPass" class="lblDatosUser">
-					<label id="piel">Contraseña nueva:</label>
-				</div>
-				<div data-role="content" id="inpNewPass" class="inputDatosUser">
-					<input type="password" id="inputNewPass">
-				</div>
-				<div data-role="content" id="lblRptPass" class="lblDatosUser">
-					<label id="ciudad">Repetir contraseña:</label>
-				</div>
-				<div data-role="content" id="inpRptPass" class="inputDatosUser">
-					<input type="password" id="inputRptPass">
-				</div>
-				<a class="ui-btn ui-btn-b btnUsrEsp">Guardar</a>
-			</div>
-			<div data-role="panel" id="leftPanel6" data-display="overlay" class="overlayPanel" style=" background: rgba(3,3,3,0.9);" align="left">
-					<a href="#usrExistente" data-transition="pop" data-role="button" data-inline="true" data-icon="home" data-iconpos="left" style="background-color: transparent; border: none">Home</a><br />
-					<a href="#perfilPublico" data-transition="pop" data-role="button" data-inline="true" data-icon="user" data-iconpos="left" style="background-color: transparent; border: none">Mi perfil</a>
-					<a href="#page1" data-transition="pop" data-role="button" data-inline="true" data-icon="delete" data-iconpos="left" style="background-color: transparent; border: none">Cerrar sesión</a>
-					<a href="#" onClick="salir()"  data-role="button" data-inline="true" data-icon="power" data-iconpos="left" style="background-color: transparent; border: none">Salir</a>
-				</div>
-			<div data-role="footer" id="ftrUsr6">
-				<div align="center">
-					<a href="#leftPanel6" data-theme="d"><img class="imagenFooter" id="logoFtr6" alt="logo" src="images/ojo_glance_bco.png"/></a>
-					<br/>
-					<br/>
-				</div>
-			</div>
-		</div>
-		<div data-role="page" id="usrNuevo" data-theme="b" class="stylePages" align="center">
-			<div data-role="content" style="height: 25%;">
-				<p id="bienvenidaUsr" class="bienvenida">TEXTO DE BIENVENIDA.<br /> Escribir aquí el texto que se desee dar al nuevo usuario indicando 
-				brevemente las características de la app para su uso</p>
-			</div>
-			<div data-role="content" style="height: 25%;">
-				<p id="bases" class="bienvenida">Aquí va un visor para las bases y condiciones</p>
-			</div>
-			<div data-role="content" style="padding-bottom: 0px !important;">
-				<label>
-					<input type="checkbox"/>Acepto las bases y condiciones
-				</label>
-			</div>
-			<div data-role="content">
-					<a href="#usrNvo1" class="ui-btn ui-btn-b btnGenerico">Siguiente</a>
-			</div>
-			<div data-role="footer" id="ftrUsr7">
-				<div align="center">
-					<a href="#" data-theme="d"><img class="imagenFooter" id="logoFtr3" alt="logo" src="images/ojo_glance_bco.png"/></a>
-					<br />
-					<br />
-				</div>
-			</div>
-		</div>
-		<div data-role="page" id="usrNvo1" data-theme="b" class="stylePages" align="center">
-			<div data-role="header">
-				<label>Paso 1: Datos personales</label>
-			</div>
-			<div data-role="content" id="datosPerfilPublico">
-				<div data-role="content" id="lblNickNvo" class="lblDatosUser">
-					<label id="edad">Nombre usuario:</label>
-				</div>
-				<div data-role="content" id="inpNickNvo" class="inputDatosUser">
-					<input type="text" id="inputNickNvo">
-				</div>
-				<div data-role="content" id="lblNomApNvo" class="lblDatosUser">
-					<label id="estatura">Nombre Apellido:</label>
-				</div>
-				<div data-role="content" id="inpNomApNvo" class="inputDatosUser">
-					<input type="text" id="inputNomApNvo">
-				</div>
-				<div data-role="content" id="lblFecNacNvo" class="lblDatosUser">
-					<label id="medidas">Fecha de nacimiento:</label>
-				</div>
-				<div data-role="content" id="inpFecNacNvo" class="inputDatosUser">
-					<input type="text" id="inputFecNacNvo">
-				</div>
-				<div data-role="content" id="lblTelNvo" class="lblDatosUser">
-					<label id="pelo">Teléfono contacto:</label>
-				</div>
-				<div data-role="content" id="inpTelNvo" class="inputDatosUser">
-					<input type="text" id="inputTelNvo">
-				</div>
-				<div data-role="content" id="lblEmailNvo" class="lblDatosUser">
-					<label id="ojos">Correo Electrónico:</label>
-				</div>
-				<div data-role="content" id="inpEmailNvo" class="inputDatosUser">
+		<div data-role="page" id="espNvo1" data-theme="b" class="stylePages" align="center" style="background-image: url(images/color5.jpg); background-size: cover">
+			<div data-role="panel" id="leftPanelEsp1" data-display="overlay" class="overlayPanel" style=" background: rgba(3,3,3,0.9);"  align="left">
+                <a href="#inicioEsp" data-transition="pop" data-role="button" data-inline="true" data-icon="home" data-iconpos="left" style="background-color: transparent; border: none">Home</a><br />
+                <a href="#page1" data-transition="pop" data-role="button" data-inline="true" data-icon="delete" data-iconpos="left" style="background-color: transparent; border: none">Cerrar sesión</a>
+                <a href="#" onClick="salir()"  data-role="button" data-inline="true" data-icon="power" data-iconpos="left" style="background-color: transparent; border: none">Salir</a>
+            </div>
+            <div data-role="header" id="headNavegacion" class="imagenHdr">
+                <div id="logoHeader" align="left">
+                    <a href="#leftPanelEsp1"><img class="imagenFooter" id="logoHdr1" alt="logo" src="images/ojo_glance_bco.png"/></a>
+                </div>
+                <div id="btnHeaderEsp" align="Left">
+                    <a class="ui-btn ui-btn-b" id="btnFiltro">Datos de login</a>
+                </div>
+            </div>
+			<div data-role="content" id="datosPerfilPublicoEsp" style="margin-top: 25%;">
+				<div data-role="content" id="lblNickNvoEsp">
+					<label id="nickEsp">Nombre usuario:</label>
+					<input type="text" id="inputUserEsp">
+					<label id="EspMail">Correo Electrónico:</label>
 					<input type="email" id="inputEmailNvo">
-				</div>
-				<div data-role="content" id="lblNewPassNvo" class="lblDatosUser">
-					<label id="piel">Contraseña nueva:</label>
-				</div>
-				<div data-role="content" id="inpNewPassNvo" class="inputDatosUser">
+					<label id="piel">Contraseña:</label>
 					<input type="password" id="inputNewPassNvo">
-				</div>
-				<div data-role="content" id="lblRptPassNvo" class="lblDatosUser">
 					<label id="ciudad">Repetir contraseña:</label>
-				</div>
-				<div data-role="content" id="inpRptPassNvo" class="inputDatosUser">
 					<input type="password" id="inputRptPassNvo">
 				</div>
 				<div data-role="content" style="padding-bottom: 0px !important"></div>
-				<a href="#pagoMembresia" class="ui-btn ui-btn-b btnGenerico">Siguiente</a>				
-			</div>
-			<div data-role="footer" id="ftrUsr8">
-				<div align="center">
-					<a href="#" data-theme="d"><img class="imagenFooter" id="logoFtr8" alt="logo" src="images/ojo_glance_bco.png"/></a>
-					<br />
-					<br />
-				</div>
-			</div>
-		</div>
-		<div data-role="page" data-theme="b" id="fotosNvoUsr" style="width: 100%; font-family:'Tw Cen MT'" align="center">
-			<div data-role="header">
-				<label>Paso 5: Fotos / videos</label>
-			</div>	
-			<div data-role="content" id="lblFotosNvo" class="backColor">
-				<div data-role="content" id="contFotosNvo" style="margin: 0 0 0 0; padding: 0 0 0 0; min-width: 100%">
-					<div data-role="content" id="fotoUnoNvo" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
-						<img id="foto1Nvo" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto1">
-						<a class="ui-btn ui-btn-b btnGaleria">Subir</a>
-					</div>
-					<div data-role="content" id="fotoDosNvo" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
-						<img id="foto2Nvo" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto2">
-						<a class="ui-btn ui-btn-b btnGaleria">Subir</a>
-					</div>
-					<div data-role="content" id="fotoTresNvo" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
-						<img id="foto3Nvo" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto3">
-						<a class="ui-btn ui-btn-b btnGaleria">Subir</a>
-					</div>
-					<div data-role="content" id="fotoCuatroNvo" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
-						<img id="foto4Nvo" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto4">
-						<a class="ui-btn ui-btn-b btnGaleria">Subir</a>
-					</div>
-					<div data-role="content" id="fotoCincoNvo" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
-						<img id="foto5Nvo" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto5">
-						<a class="ui-btn ui-btn-b btnGaleria">Subir</a>
-					</div>
-					<div data-role="content" id="fotoSeisNvo" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
-						<img id="foto6Nvo" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto6">
-						<a class="ui-btn ui-btn-b btnGaleria">Subir</a>
-					</div>
-					<div data-role="content" id="videoUnoNvo" style="float: left; width: 48%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
-						<img id="video1Nvo" src="images/video.png" style="width: 70px; height: 70px;" alt="Video1">
-						<a class="ui-btn ui-btn-b btnGaleria">Subir</a>
-					</div>
-					<div data-role="content" id="videoDosNvo" style="float: right; width: 48%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
-						<img id="video2Nvo" src="images/video.png" style="width: 70px; height: 70px;" alt="Video2">
-						<a class="ui-btn ui-btn-b btnGaleria">Subir</a>
-					</div>
-					<a href="#pagoMembresia" class="ui-btn ui-btn-b btnGenerico">Siguiente</a>
-				</div>
-			</div>
-			<div data-role="panel" id="leftPanel9" data-theme="b">
-				<a href="#usrExistente" data-role="button" data-mini="true" data-inline="true" data-icon="home" data-iconpos="right">Home</a>
-			</div>
-			<div data-role="footer" id="ftrUsr9">
-				<div align="center">
-					<a href="#leftPanel9" data-theme="d"><img class="imagenFooter" id="logoFtr9" alt="logo" src="images/ojo_glance_bco.png"/></a>
-					<br/>
-					<br/>
-				</div>
-			</div>
-		</div>
-		<div data-role="page" data-theme="b" id="pagoMembresia" class="stylePages" align="center">
-			<div data-role="header">
-				<label>Paso 2: Pago membresía</label>
-			</div>
-			<div data-role="content" id="pagoMiembro">
-				<span>Seleccione el tipo de su membresía...</span><br />
-			</div>
-			<div data-role="content" id="opcionMemb">
-				<form align="left">
-						<input type="radio" name="radio-choice-v-2" id="radio-choice-v-2a" value="on" checked="checked">
-						<label for="radio-choice-v-2a">GLANCE CLASSIC</label>
-						<span>-6 fotos/chat</span>
-						<input type="radio" name="radio-choice-v-2" id="radio-choice-v-2b" value="off">
-						<label for="radio-choice-v-2b">GLANCE GOLD</label>
-						<span>-6 fotos/2 videos/chat</span>
-						<input type="radio" name="radio-choice-v-2" id="radio-choice-v-2c" value="other">
-						<label for="radio-choice-v-2c">GLANCE PREMIUM</label>
-						<span>-6 fotos/2 videos/transmisión en vivo/chat</span>
-				</form><br />
-				<a href="#pagoMembresia1" class="ui-btn ui-btn-b btnGenerico">Siguiente</a>
-			</div>
-			<div data-role="panel" id="leftPanel10" data-theme="b">
-					<a href="#usrExistente" data-role="button" data-mini="true" data-inline="true" data-icon="home" data-iconpos="right">Home</a>
-			</div>
-			<div data-role="footer" id="ftrUsr10">
-				<div align="center">
-					<a href="#leftPanel10" data-theme="d"><img class="imagenFooter" id="logoFtr10" alt="logo" src="images/ojo_glance_bco.png"/></a>
-					<br/>
-					<br/>
-				</div>
-			</div>
-		</div>
-		<div data-role="page" data-theme="b" id="pagoMembresia1" class="stylePages" align="center">
-			<div data-role="header">
-				<label>Paso 3: Selección tiempo membresía</label>
-			</div>
-			<div data-role="content" id="pagoMiembro1">
-				<span>Seleccione el tiempo de su membresía...</span><br />
-			</div>
-			<div data-role="content" id="opcionMemb1">
-				<form align="left">
-						<input type="radio" name="radio-choice-v-3" id="radio-choice-v-3a" value="on" checked="checked">
-						<label for="radio-choice-v-3a">1 Mes</label>
-						<span>$ XXXXXXX</span>
-						<input type="radio" name="radio-choice-v-3" id="radio-choice-v-3b" value="off">
-						<label for="radio-choice-v-3b">3 Meses</label>
-						<span>$ XXXXXXX</span>
-						<input type="radio" name="radio-choice-v-3" id="radio-choice-v-3c" value="other">
-						<label for="radio-choice-v-3c">12 Meses</label>
-						<span>$ XXXXXXX</span>
-				</form><br />
-				<span>Al apretar siguiente se redireccionará al sitio de MercadoPago para hacer el pago.</span>
-				<a href="#pagoMP" class="ui-btn ui-btn-b btnGenerico">Siguiente</a>
-			</div>
-			<div data-role="panel" id="leftPanel11" data-theme="b">
-					<a href="#usrExistente" data-role="button" data-mini="true" data-inline="true" data-icon="home" data-iconpos="right">Home</a>
-			</div>
-			<div data-role="footer" id="ftrUsr11">
-				<div align="center">
-					<a href="#leftPanel11" data-theme="d"><img class="imagenFooter" id="logoFtr11" alt="logo" src="images/ojo_glance_bco.png"/></a>
-					<br/>
-					<br/>
-				</div>
-			</div>
-		</div>
-		<div data-role="page" data-theme="b" id="pagoMP" class="stylePages" align="center">
-			<div data-role="header">
-				<label>Paso 4: Pago en mercado pago</label>
-			</div>
-			<div data-role="content" id="btnsMP">
-				<a href="#loginUsr" class="ui-btn ui-btn-b btnGenerico">Pago exitoso</a><br />
-				<a class="ui-btn ui-btn-b btnGenerico">Pago fallido</a><br />
-			</div>
-			<div data-role="panel" id="leftPanel12" data-theme="b">
-					<a href="#usrExistente" data-role="button" data-mini="true" data-inline="true" data-icon="home" data-iconpos="right">Home</a>
-			</div>
-			<div data-role="footer" id="ftrUsr12">
-				<div align="center">
-					<a href="#leftPanel12" data-theme="d"><img class="imagenFooter" id="logoFtr12" alt="logo" src="images/ojo_glance_bco.png"/></a>
-					<br/>
-					<br/>
-				</div>
-			</div>
-		</div>
-		<div data-role="page" data-theme="b" id="loginEsp">
-			<div data-role="content">
-				<div data-role="content" id="datosAccesoE" align="center">
-					<div id="inputEsp" align="center">
-						<div id="divImgEsp" class="imgLogin">
-							<img id="imgEsp" class="imgLogueo" src="JQueryMobile/images/icons-png/user-white.png" />
-						</div>
-						<div id="inputUsrEsp" class="inputLogin" >
-							<input id="nombreEsp" type="text" placeholder="Usuario"/>
-						</div>
-					</div>
-					<div id="inputPassEsp">
-						<div id="divImgPassEsp" class="imgLogin" align="center">
-							<img id="imgPassEsp"  class="imgLogueo"  src="JQueryMobile/images/icons-png/lock-white.png" />
-						</div>
-						<div id="inputTextPassEsp" class="inputLogin" >
-							<input id="passwordEsp" type="password" placeholder="Contraseña"/>
-						</div>
-					</div>
-					<div id="olvidoPassEsp" align="center">
-						<br/>
-						<span>Usuario/contraseña olvidados?</span>
-						<br/>
-						<a>Toque aquí...</a>
-					</div>
-					<br/>
-					<a class="ui-btn ui-btn-b btnUsrEsp" value="ENTRAR" href="#inicioEsp" >ENTRAR</a>
-					<span>o...</span>
-					<br/>
-					<a class="ui-btn ui-btn-b btnUsrEsp" value="Nuevo Espectador" href="#usrNuevo">Nuevo Espectador</a>
-				</div>
-			</div>
-			<div data-role="footer" id="ftrUsr13">
-				<div align="center">
-					<img class="imagenFooter" id="logoFtr13" alt="logo" src="images/ojo_glance_bco.png"/>
-					<br/>
-					<br/>
-				</div>
-			</div>
-		</div>
-		<div data-role="page" data-theme="b" id="inicioEsp">
-			<div data-role="content"> 
-				<div id="opcionesEsp" align="center">
-					<br/>
-					<div id="opEsp1">
-						<a id="navegar" class="ui-btn ui-btn-b btnUsrEsp" href="#navegacion1">NAVEGAR</a>
-						<br/>
-						<br/>
-						<a id="favoritos" class="ui-btn ui-btn-b btnUsrEsp" href="#loginEsp">FAVORITOS</a>
-					</div>
-				</div>
-				<br/>
-			</div>
-			<div data-role="footer" id="ftrUsr14">
-				<div align="center">
-					<img class="imagenFooter" id="logoFtr14" alt="logo" src="images/ojo_glance_bco.png"/>
-					<br/>
-					<br/>
-				</div>
-			</div>	
-		</div>
-		<div data-role="page" id="navegacion1" data-theme="b">
-			<div data-role="panel" id="leftPanelEsp1" data-display="overlay" class="overlayPanel" style=" background: rgba(3,3,3,0.9);"  align="left">
-				<a href="#usrExistente" data-transition="pop" data-role="button" data-inline="true" data-icon="home" data-iconpos="left" style="background-color: transparent; border: none">Home</a><br />
-				<a href="#" data-transition="pop" data-role="button" data-inline="true" data-icon="mail" data-iconpos="left" style="background-color: transparent; border: none">Mensajes</a>
-				<a href="#" data-transition="pop" data-role="button" data-inline="true" data-icon="heart" data-iconpos="left" style="background-color: transparent; border: none">Agregar a Favoritos</a>
-				<a href="#" data-transition="pop" data-role="button" data-inline="true" data-icon="comment" data-iconpos="left" style="background-color: transparent; border: none">Chat</a>				
-				<a href="#page1" data-transition="pop" data-role="button" data-inline="true" data-icon="delete" data-iconpos="left" style="background-color: transparent; border: none">Cerrar sesión</a>
-				<a href="#" onClick="salir()"  data-role="button" data-inline="true" data-icon="power" data-iconpos="left" style="background-color: transparent; border: none">Salir</a>
-			</div>
-			<div data-role="header" id="headNavegacion" class="imagenHdr">
-				<div id="logoHeader" align="left">
-					<a href="#leftPanelEsp1"><img class="imagenFooter" id="logoHdr1" alt="logo" src="images/ojo_glance_bco.png"/></a>
-				</div>
-				<div id="btnHeader" align="right">
-					<a class="ui-btn ui-btn-b" id="btnFiltro">Filtros</a>
-				</div>
-			</div>
-			<div data-role="content" id="contPerfiles">
-				<div data-role="content" id="perfil1" class="divPerfil">
-					<a href="#detPerfil1" style="text-decoration: none;">
-						<div id="fotoPerfil1" class="divFotoPerfil">
-							<img  class="fotoPerfilNav" src="images/woman1.jpg">
-						</div>
-						<div id="textoPerfil1" class="divTextoPerfil">
-							<p>
-								NOMBRE: Pirula Pirulez<br />
-								Edad: 40<br />
-								Ubicación: Córdoba
-							</p>						
-						</div>
-					</a>
-				</div>					
-				<br />
-				<div data-role="content" id="perfil2" class="divPerfil">
-					<div id="fotoPerfil2" class="divFotoPerfil">
-						<img  class="fotoPerfilNav" src="images/woman2.jpg">
-					</div>
-					<div id="textoPerfil2" class="divTextoPerfil">
-						<p>
-							NOMBRE: Juana de Arco<br />
-							Edad: 35<br />
-							Ubicación: Córdoba
-						</p>						
-					</div>
-				</div>
-			</div>
-		</div>
-		<div data-role="page" id="detPerfil1" data-theme="b">
-			<div class="swiper-container">
-				<div class="swiper-wrapper">
-				  <div class="swiper-slide">Slide 1</div>
-				  <div class="swiper-slide">Slide 2</div>
-				  <div class="swiper-slide">Slide 3</div>
-				  <div class="swiper-slide">Slide 4</div>
-				  <div class="swiper-slide">Slide 5</div>
-				  <div class="swiper-slide">Slide 6</div>
-				  <div class="swiper-slide">Slide 7</div>
-				  <div class="swiper-slide">Slide 8</div>
-				  <div class="swiper-slide">Slide 9</div>
-				  <div class="swiper-slide">Slide 10</div>
-				</div>
-				
-				<div class="swiper-button-next"></div>
-				<div class="swiper-button-prev"></div>
-			  </div>			  
-		</div>		
-	</body>
+				<a href="#loginEsp" class="ui-btn ui-btn-b btnGenerico">Siguiente</a>
+			</div>			
+		</div>			
+        <div data-role="page" data-theme="b" id="fotosNvoUsr" style="width: 100%; font-family:'Tw Cen MT'" align="center">
+            <div data-role="header">
+                <label>Paso 5: Fotos / videos</label>
+            </div>	
+            <div data-role="content" id="lblFotosNvo" class="backColor">
+                <div data-role="content" id="contFotosNvo" style="margin: 0 0 0 0; padding: 0 0 0 0; min-width: 100%">
+                    <div data-role="content" id="fotoUnoNvo" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
+                        <img id="foto1Nvo" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto1">
+                        <a class="ui-btn ui-btn-b btnGaleria">Subir</a>
+                    </div>
+                    <div data-role="content" id="fotoDosNvo" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
+                        <img id="foto2Nvo" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto2">
+                        <a class="ui-btn ui-btn-b btnGaleria">Subir</a>
+                    </div>
+                    <div data-role="content" id="fotoTresNvo" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
+                        <img id="foto3Nvo" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto3">
+                        <a class="ui-btn ui-btn-b btnGaleria">Subir</a>
+                    </div>
+                    <div data-role="content" id="fotoCuatroNvo" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
+                        <img id="foto4Nvo" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto4">
+                        <a class="ui-btn ui-btn-b btnGaleria">Subir</a>
+                    </div>
+                    <div data-role="content" id="fotoCincoNvo" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
+                        <img id="foto5Nvo" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto5">
+                        <a class="ui-btn ui-btn-b btnGaleria">Subir</a>
+                    </div>
+                    <div data-role="content" id="fotoSeisNvo" style="float: left; width: 33%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
+                        <img id="foto6Nvo" src="images/imagen.png" style="width: 70px; height: 70px;" alt="Foto6">
+                        <a class="ui-btn ui-btn-b btnGaleria">Subir</a>
+                    </div>
+                    <div data-role="content" id="videoUnoNvo" style="float: left; width: 48%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
+                        <img id="video1Nvo" src="images/video.png" style="width: 70px; height: 70px;" alt="Video1">
+                        <a class="ui-btn ui-btn-b btnGaleria">Subir</a>
+                    </div>
+                    <div data-role="content" id="videoDosNvo" style="float: right; width: 48%; margin-left:0; margin-right: 0; padding: 0 0 0 0">
+                        <img id="video2Nvo" src="images/video.png" style="width: 70px; height: 70px;" alt="Video2">
+                        <a class="ui-btn ui-btn-b btnGaleria">Subir</a>
+                    </div>
+                    <a href="#pagoMembresia" class="ui-btn ui-btn-b btnGenerico">Siguiente</a>
+                </div>
+            </div>
+            <div data-role="panel" id="leftPanel9" data-theme="b">
+                <a href="#usrExistente" data-role="button" data-mini="true" data-inline="true" data-icon="home" data-iconpos="right">Home</a>
+            </div>
+            <div data-role="footer" id="ftrUsr9">
+                <div align="center">
+                    <a href="#leftPanel9" data-theme="d"><img class="imagenFooter" id="logoFtr9" alt="logo" src="images/ojo_glance_bco.png"/></a>
+                    <br/>
+                    <br/>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" data-theme="b" id="pagoMembresia" class="stylePages" align="center">
+            <div data-role="header">
+                <label>Paso 2: Pago membresía</label>
+            </div>
+            <div data-role="content" id="pagoMiembro">
+                <span>Seleccione el tipo de su membresía...</span><br />
+            </div>
+            <div data-role="content" id="opcionMemb">
+                <form >
+                    <input type="radio" name="radio-choice-v-2" id="radio-choice-v-2a" value="on" checked="checked">
+                    <label for="radio-choice-v-2a">GLANCE CLASSIC</label>
+                    <span>-6 fotos/chat</span>
+                    <input type="radio" name="radio-choice-v-2" id="radio-choice-v-2b" value="off">
+                    <label for="radio-choice-v-2b">GLANCE GOLD</label>
+                    <span>-6 fotos/2 videos/chat</span>
+                    <input type="radio" name="radio-choice-v-2" id="radio-choice-v-2c" value="other">
+                    <label for="radio-choice-v-2c">GLANCE PREMIUM</label>
+                    <span>-6 fotos/2 videos/transmisión en vivo/chat</span>
+                </form><br />
+                <a href="#pagoMembresia1" class="ui-btn ui-btn-b btnGenerico">Siguiente</a>
+            </div>
+            <div data-role="panel" id="leftPanel10" data-theme="b">
+                <a href="#usrExistente" data-role="button" data-mini="true" data-inline="true" data-icon="home" data-iconpos="right">Home</a>
+            </div>
+            <div data-role="footer" id="ftrUsr10">
+                <div align="center">
+                    <a href="#leftPanel10" data-theme="d"><img class="imagenFooter" id="logoFtr10" alt="logo" src="images/ojo_glance_bco.png"/></a>
+                    <br/>
+                    <br/>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" data-theme="b" id="pagoMembresia1" class="stylePages" align="center">
+            <div data-role="header">
+                <label>Paso 3: Selección tiempo membresía</label>
+            </div>
+            <div data-role="content" id="pagoMiembro1">
+                <span>Seleccione el tiempo de su membresía...</span><br />
+            </div>
+            <div data-role="content" id="opcionMemb1">
+                <form>
+                    <input type="radio" name="radio-choice-v-3" id="radio-choice-v-3a" value="on" checked="checked">
+                    <label for="radio-choice-v-3a">1 Mes</label>
+                    <span>$ XXXXXXX</span>
+                    <input type="radio" name="radio-choice-v-3" id="radio-choice-v-3b" value="off">
+                    <label for="radio-choice-v-3b">3 Meses</label>
+                    <span>$ XXXXXXX</span>
+                    <input type="radio" name="radio-choice-v-3" id="radio-choice-v-3c" value="other">
+                    <label for="radio-choice-v-3c">12 Meses</label>
+                    <span>$ XXXXXXX</span>
+                </form><br />
+                <span>Al apretar siguiente se redireccionará al sitio de MercadoPago para hacer el pago.</span>
+                <a href="#pagoMP" class="ui-btn ui-btn-b btnGenerico">Siguiente</a>
+            </div>
+            <div data-role="panel" id="leftPanel11" data-theme="b">
+                <a href="#usrExistente" data-role="button" data-mini="true" data-inline="true" data-icon="home" data-iconpos="right">Home</a>
+            </div>
+            <div data-role="footer" id="ftrUsr11">
+                <div align="center">
+                    <a href="#leftPanel11" data-theme="d"><img class="imagenFooter" id="logoFtr11" alt="logo" src="images/ojo_glance_bco.png"/></a>
+                    <br/>
+                    <br/>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" data-theme="b" id="pagoMP" class="stylePages" align="center">
+            <div data-role="header">
+                <label>Paso 4: Pago en mercado pago</label>
+            </div>
+            <div data-role="content" id="btnsMP">
+                <a href="#loginUsr" class="ui-btn ui-btn-b btnGenerico">Pago exitoso</a><br />
+                <a class="ui-btn ui-btn-b btnGenerico">Pago fallido</a><br />
+            </div>
+            <div data-role="panel" id="leftPanel12" data-theme="b">
+                <a href="#usrExistente" data-role="button" data-mini="true" data-inline="true" data-icon="home" data-iconpos="right">Home</a>
+            </div>
+            <div data-role="footer" id="ftrUsr12">
+                <div align="center">
+                    <a href="#leftPanel12" data-theme="d"><img class="imagenFooter" id="logoFtr12" alt="logo" src="images/ojo_glance_bco.png"/></a>
+                    <br/>
+                    <br/>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" data-theme="b" id="loginEsp" style="background-image: url(images/color3.jpg); background-size: cover">
+            <div data-role="content">
+                <div data-role="content" id="datosAccesoE" align="center">
+                    <div id="inputEsp" align="center">
+                        <div id="divImgEsp" class="imgLogin">
+                            <img id="imgEsp" class="imgLogueo" src="JQueryMobile/images/icons-png/user-white.png" />
+                        </div>
+                        <div id="inputUsrEsp" class="inputLogin" >
+                            <input id="nombreEsp" type="text" placeholder="Usuario"/>
+                        </div>
+                    </div>
+                    <div id="inputPassEsp">
+                        <div id="divImgPassEsp" class="imgLogin" align="center">
+                            <img id="imgPassEsp"  class="imgLogueo"  src="JQueryMobile/images/icons-png/lock-white.png" />
+                        </div>
+                        <div id="inputTextPassEsp" class="inputLogin" >
+                            <input id="passwordEsp" type="password" placeholder="Contraseña"/>
+                        </div>
+                    </div>
+                    <div id="olvidoPassEsp" align="center">
+                        <br/>
+                        <span>Usuario/contraseña olvidados?</span>
+                        <br/>
+                        <a>Toque aquí...</a>
+                    </div>
+                    <br/>
+                    <a class="ui-btn ui-btn-b btnUsrEsp" href="#inicioEsp" >ENTRAR</a>
+                    <span>o...</span>
+                    <br/>
+                    <a class="ui-btn ui-btn-b btnUsrEsp" href="#espNuevo">Nuevo Espectador</a>
+                </div>
+            </div>
+            <div data-role="footer" id="ftrUsr13">
+                <div align="center">
+                    <img class="imagenFooter" id="logoFtr13" alt="logo" src="images/ojo_glance_bco.png"/>
+                    <br/>
+                    <br/>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" data-theme="b" id="inicioEsp" style="background-image: url(images/color2.jpg); background-size: cover">
+            <div data-role="content"> 
+                <div id="opcionesEsp" align="center">
+                    <br/>
+                    <div id="opEsp1">
+                        <a id="navegar" class="ui-btn ui-btn-b btnUsrEsp" href="#navegacion1">NAVEGAR</a>
+                        <br/>
+                        <br/>
+                        <a id="favoritos" class="ui-btn ui-btn-b btnUsrEsp" href="#fav1">FAVORITOS</a>
+                    </div>
+                </div>
+                <br/>
+            </div>
+            <div data-role="footer" id="ftrUsr14">
+                <div align="center">
+                    <img class="imagenFooter" id="logoFtr14" alt="logo" src="images/ojo_glance_bco.png"/>
+                    <br/>
+                    <br/>
+                </div>
+            </div>	
+        </div>
+        <div data-role="page" id="navegacion1" data-theme="b"  style="background-image: url(images/color4.jpg); background-size: cover">
+            <div data-role="panel" id="leftPanelEsp1" data-display="overlay" class="overlayPanel" style=" background: rgba(3,3,3,0.9);"  align="left">
+                <a href="#inicioEsp" data-transition="pop" data-role="button" data-inline="true" data-icon="home" data-iconpos="left" style="background-color: transparent; border: none">Home</a><br />
+                <a href="#page1" data-transition="pop" data-role="button" data-inline="true" data-icon="delete" data-iconpos="left" style="background-color: transparent; border: none">Cerrar sesión</a>
+                <a href="#" onClick="salir()"  data-role="button" data-inline="true" data-icon="power" data-iconpos="left" style="background-color: transparent; border: none">Salir</a>
+            </div>
+            <div data-role="header" id="headNavegacion" class="imagenHdr">
+                <div id="logoHeader" align="left">
+                    <a href="#leftPanelEsp1"><img class="imagenFooter" id="logoHdr1" alt="logo" src="images/ojo_glance_bco.png"/></a>
+                </div>
+                <div id="btnHeader" align="right">
+                    <a class="ui-btn ui-btn-b" id="btnFiltro">Filtros</a>
+                </div>
+            </div>
+            <div data-role="content" id="contPerfiles">
+                <div data-role="content" id="perfil1" class="divPerfil"  style=" background: rgba(3,3,3,0.4);">
+                    <a href="#detPerfil1" style="text-decoration: none; color: white">
+                        <div id="fotoPerfil1" class="divFotoPerfil">
+                            <img  class="fotoPerfilNav" src="images/woman1.jpg">
+                        </div>
+                        <div id="textoPerfil1" class="divTextoPerfil">
+                            <p>
+                                NOMBRE: Pirula Pirulez<br />
+                                Edad: 40<br />
+                                Ubicación: Córdoba
+                            </p>						
+                        </div>
+                    </a>
+                </div>					
+                <br />
+                <div data-role="content" id="perfil2" class="divPerfil"  style=" background: rgba(3,3,3,0.4);">
+                    <div id="fotoPerfil2" class="divFotoPerfil">
+                        <img  class="fotoPerfilNav" src="images/woman2.jpg">
+                    </div>
+                    <div id="textoPerfil2" class="divTextoPerfil">
+                        <p>
+                            NOMBRE: Juana de Arco<br />
+                            Edad: 35<br />
+                            Ubicación: Córdoba
+                        </p>						
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="fav1" data-theme="b"  style="background-image: url(images/color4.jpg); background-size: cover">
+            <div data-role="panel" id="leftPanelFav1" data-display="overlay" class="overlayPanel" style=" background: rgba(3,3,3,0.9);"  align="left">
+                <a href="#inicioEsp" data-transition="pop" data-role="button" data-inline="true" data-icon="home" data-iconpos="left" style="background-color: transparent; border: none">Home</a><br />
+                <a href="#page1" data-transition="pop" data-role="button" data-inline="true" data-icon="delete" data-iconpos="left" style="background-color: transparent; border: none">Cerrar sesión</a>
+                <a href="#" onClick="salir()"  data-role="button" data-inline="true" data-icon="power" data-iconpos="left" style="background-color: transparent; border: none">Salir</a>
+            </div>
+            <div data-role="header" id="headNavegacion" class="imagenHdr">
+                <div id="logoHeader" align="left">
+                    <a href="#leftPanelFav1"><img class="imagenFooter" id="logoHdr1" alt="logo" src="images/ojo_glance_bco.png"/></a>
+                </div>
+                <div id="btnHeader" align="right">
+                    <a class="ui-btn ui-btn-b" id="btnFiltro">Favoritos</a>
+                </div>
+            </div>
+            <div data-role="content" id="contPerfilesFav">
+                <div data-role="content" id="perfilFav1" class="divPerfil"  style=" background: rgba(3,3,3,0.4);">
+                    <a href="#detPerfilFav1" style="text-decoration: none; color: white">
+                        <div id="fotoPerfilFav1" class="divFotoPerfil">
+                            <img  class="fotoPerfilNav" src="images/woman1.jpg">
+                        </div>
+                        <div id="textoPerfilFav1" class="divTextoPerfil">
+                            <p>
+                                NOMBRE: Pirula Pirulez<br />
+                                Edad: 40<br />
+                                Ubicación: Córdoba
+                            </p>						
+                        </div>
+                    </a>
+                </div>					
+                <br />
+            </div>
+        </div>
+        <div data-role="page" id="detPerfil1" data-theme="b" style="background-image: url(images/ojo1.jpg); background-size: cover;" >
+            <div data-role="panel" id="leftPanelEsp2" data-display="overlay" class="overlayPanel" style=" background: rgba(3,3,3,0.9);"  align="left">
+                <a href="#inicioEsp" data-transition="pop" data-role="button" data-inline="true" data-icon="home" data-iconpos="left" style="background-color: transparent; border: none">Home</a><br />
+                <a href="#" data-transition="pop" data-role="button" data-inline="true" data-icon="heart" data-iconpos="left" style="background-color: transparent; border: none">Agregar a Favoritos</a>
+                <a href="#" data-transition="pop" data-role="button" data-inline="true" data-icon="comment" data-iconpos="left" style="background-color: transparent; border: none">Chat</a>				
+                <a href="#page1" data-transition="pop" data-role="button" data-inline="true" data-icon="delete" data-iconpos="left" style="background-color: transparent; border: none">Cerrar sesión</a>
+                <a href="#" onClick="salir()"  data-role="button" data-inline="true" data-icon="power" data-iconpos="left" style="background-color: transparent; border: none">Salir</a>
+            </div>
+            <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false" style="min-height: 35% !important; max-height: 35% !important; background-color: darkgrey !important; margin :5% 5% 0% 5%; overflow: auto">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                </ol>
+
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <img src="images/mujer1.jpeg" alt="Los Angeles" style="width:100%; ">
+                    </div>
+
+                    <div class="item">
+                        <img src="images/mujer2.jpg" alt="Chicago" style="width:100%;">
+                    </div>
+
+                    <div class="item">
+                        <img src="images/mujer3.jpg" alt="New york" style="width:100%;">
+                    </div>
+                </div>
+
+                <!-- Left and right controls -->
+                <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                    <img src="JQueryMobile/images/icons-png/carat-l-black.png" />
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <img src="JQueryMobile/images/icons-png/carat-r-black.png" />
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+            <div data-role="content" align="center">
+                <h3 style="margin-top: 0px !important;">Juana de Arco</h3>
+                <div id="datosUsrSlctIzq" align="left" style="width: 48%; float: left; margin-left: 5%">
+                    <label>Edad: 30</label>
+                    <label>Altura: 1.70</label>
+                    <label>Medidas: 90-60-90</label>
+                    <label>Ojos: Marrones</label>
+                    <label>Pelo: Castaño</label>
+                </div>
+                <div id="datosUsrSlctDer" align="left" style="width: 45%; float: right">
+                    <label>Piel: Blanca</label>
+                    <label>Piercings: No</label>
+                    <label>Tatoos: No</label>
+                    <label>Ubicación: Córdoba</label>
+                </div>
+                <div id="descUsr" style=" width: 95%; margin: 0% 5% 0% 5%; float: left; word-wrap: break-word" align="left">
+                    <p style="padding: 0% 5% 0% 0%">Sobre mí: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+                    </p>
+                </div>
+                <!--<a href="#" class="ui-btn ui-btn-b ui-btn-inline" style="width: 30%; float: left; margin-right: 0">Mensaje</a>
+                <a href="#" class="ui-btn ui-btn-b ui-btn-inline" style="width: 30%; float: right; margin-right: 0">Añadir a favoritos</a>
+                <a href="#" class="ui-btn ui-btn-b ui-btn-inline" style="width: 30%; float: right; margin-right: 15px">Chat</a>-->
+            </div>
+            <div data-role="footer" id="ftrUsr15">
+                <div align="center">
+                    <a href="#leftPanelEsp2"><img class="imagenFooter" id="logoFtr15" alt="logo" src="images/ojo_glance_bco.png"/></a>
+                    <br/>
+                    <br/>
+                </div>
+            </div>	
+        </div>		
+    </body>
 </html>
