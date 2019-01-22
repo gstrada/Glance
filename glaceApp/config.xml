@@ -23,7 +23,7 @@
   <preference name="android-maxSdkVersion" value="26" />
   <preference name="android-targetSdkVersion" value="10" />
   <preference name="android-installLocation" value="auto" />
-  <preference name="android-windowSoftInputMode" value="stateVisible|adjustResize" />
+  
    <platform name="android">
         <allow-intent href="market:*" />
         <icon density="mdpi" src="images/LOGO1CO.png" />
